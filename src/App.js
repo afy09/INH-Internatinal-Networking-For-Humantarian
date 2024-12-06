@@ -21,6 +21,9 @@ import Terms from "./pages/terms";
 import Privacy from "./pages/privacy";
 import Error from "./pages/error";
 import Contact from "./pages/contact";
+import DaftarProgram from "./pages/daftarprogram";
+import NewsInh from "./pages/newsinh";
+import Distribusi from "./pages/distribusi";
 
 function App() {
   return (
@@ -36,8 +39,11 @@ function App() {
       <Route path="/legalitas" element={<Legalitas />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/daftarprogram" element={<DaftarProgram />} />
       <Route path="/blog-detail" element={<BlogDetails />} />
       <Route path="/blog-detail/:id" element={<BlogDetails />} />
+      <Route path="/newsinh" element={<NewsInh />} />
+      <Route path="/distribusi" element={<Distribusi />} />
       <Route path="/helpcenter" element={<Helpcenter />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />

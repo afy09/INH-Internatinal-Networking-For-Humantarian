@@ -38,7 +38,7 @@ export default function AboutTwo() {
             </ul>
 
             <div className="mt-4">
-              <Link to="" className="hover:text-amber-400 font-medium duration-500 inline-flex items-center">
+              <Link to="/aboutus" className="hover:text-amber-400 font-medium duration-500 inline-flex items-center">
                 Lebih lihat detail <MdKeyboardArrowRight className="ms-1 text-[20px]" />
               </Link>
             </div>

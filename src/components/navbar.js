@@ -135,7 +135,7 @@ export default function Navbar() {
           </ul>
           <div id="navigation" className={`${toggleMenu ? "block" : ""}`}>
             <ul className="navigation-menu">
-              <li className="has-submenu parent-menu-item">
+              {/* <li className="has-submenu parent-menu-item">
                 <Link to="/">Beranda</Link>
                 <span className="menu-arrow"></span>
                 <ul className="submenu">
@@ -145,6 +145,12 @@ export default function Navbar() {
                     </Link>
                   </li>
                 </ul>
+              </li> */}
+
+              <li>
+                <Link to="/" className="sub-menu-item">
+                  Beranda
+                </Link>
               </li>
 
               <li className="has-submenu parent-parent-menu-item">
@@ -195,23 +201,23 @@ export default function Navbar() {
                 </ul>
               </li>
               <li>
-                <Link to="/safksd" className="sub-menu-item">
+                <Link to="/daftarprogram" className="sub-menu-item">
                   Daftar Program
                 </Link>
               </li>
 
               <li className="has-submenu parent-parent-menu-item">
-                <Link to="">Publikasi</Link>
+                <Link to="/newsinh">Publikasi</Link>
                 <span className="menu-arrow"></span>
                 <ul className="submenu">
                   <li>
-                    <Link to="/sakndkjas" className="sub-menu-item">
+                    <Link to="/newsinh" className="sub-menu-item">
                       News INH
                     </Link>
                   </li>
 
                   <li>
-                    <Link to="/sklmdklas" className="sub-menu-item">
+                    <Link to="/distribusi" className="sub-menu-item">
                       Distribusi Program
                     </Link>
                   </li>
