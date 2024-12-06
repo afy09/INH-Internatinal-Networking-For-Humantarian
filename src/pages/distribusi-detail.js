@@ -19,10 +19,10 @@ export default function BlogDetails() {
     // Fetch data berdasarkan ID
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://fajarseptianto.my.id:8877/api/news/${id}`);
+        const response = await fetch(`http://fajarseptianto.my.id:8877/api/distribusi-program/${id}`);
         const result = await response.json();
-        if (result?.data) {
-          setData(result.data); // Ambil data dari respons
+        if (result) {
+          setData(result); // Ambil data dari respons
         }
       } catch (error) {
         console.error("Error fetching blog detail:", error);
@@ -58,7 +58,7 @@ export default function BlogDetails() {
           <div className="md:flex justify-center">
             <div className="lg:w-2/3 md:w-4/5">
               <Link to="" className="bg-amber-400 text-white text-[12px] font-semibold px-2.5 py-0.5 rounded h-5">
-                Berita
+                Distribusi Program
               </Link>
               <h5 className="md:text-4xl text-3xl font-bold md:tracking-normal tracking-normal md:leading-normal leading-normal mt-3">{data.title}</h5>
               <p className="text-slate-400 text-lg mt-3">{data.deskripsi}</p>

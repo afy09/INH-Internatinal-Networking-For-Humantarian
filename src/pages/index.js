@@ -68,10 +68,6 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="pt-6">
-        <BrandLogo />
-      </section>
-
       <section className="relative md:py-24 py-16">
         <Features classlist="container relative" />
         <AboutOne />
@@ -80,6 +76,9 @@ export default function Index() {
         <AboutThree />
 
         <Blogs />
+      </section>
+      <section className="pt-6">
+        <BrandLogo />
       </section>
       <Footer />
       <Switcher />

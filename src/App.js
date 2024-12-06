@@ -24,6 +24,8 @@ import Contact from "./pages/contact";
 import DaftarProgram from "./pages/daftarprogram";
 import NewsInh from "./pages/newsinh";
 import Distribusi from "./pages/distribusi";
+import BrandMitra from "./pages/brandmitra";
+import DistribusiDetail from "./pages/distribusi-detail";
 
 function App() {
   return (
@@ -44,12 +46,14 @@ function App() {
       <Route path="/blog-detail/:id" element={<BlogDetails />} />
       <Route path="/newsinh" element={<NewsInh />} />
       <Route path="/distribusi" element={<Distribusi />} />
+      <Route path="/distribusi-detail/:id" element={<DistribusiDetail />} />
       <Route path="/helpcenter" element={<Helpcenter />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<Privacy />} />
+      <Route path="/brandmitra" element={<BrandMitra />} />
       <Route path="/error" element={<Error />} />
       <Route path="*" element={<Error />} />
       <Route path="contact" element={<Contact />} />

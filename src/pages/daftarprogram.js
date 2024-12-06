@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import AboutImg from "../assets/images/bg-about.png";
 import Footer from "../components/footer";
 import Switcher from "../components/switcher";
 import Navbar from "../components/navbar";
