@@ -6,7 +6,7 @@ export default function Pengumuman() {
   useEffect(() => {
     const fetchAnnouncement = async () => {
       try {
-        const response = await fetch("http://fajarseptianto.my.id:8877/api/pengumuman");
+        const response = await fetch("https://api.rekapitung.id/api/pengumuman");
         const result = await response.json();
 
         if (response && result) {

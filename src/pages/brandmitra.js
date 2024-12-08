@@ -12,7 +12,7 @@ export default function BrandLogo() {
   useEffect(() => {
     // Fetch data from the backend
     axios
-      .get(`http://fajarseptianto.my.id:8877/api/mitra`)
+      .get(`https://api.rekapitung.id/api/mitra`)
       .then((response) => {
         setBrandLogos(response.data.data);
       })
@@ -24,7 +24,7 @@ export default function BrandLogo() {
   useEffect(() => {
     // Fetch data from the backend
     axios
-      .get(`http://fajarseptianto.my.id:8877/api/lembaga_kerjasama`)
+      .get(`https://api.rekapitung.id/api/lembaga_kerjasama`)
       .then((response) => {
         setBrandKerjasama(response.data.data);
       })

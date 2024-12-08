@@ -33,12 +33,15 @@ export default function AmazingFeatures() {
           {featureData.map((item, index) => {
             return (
               <div className="px-6 py-10 shadow hover:shadow-md dark:shadow-gray-800 dark:hover:shadow-gray-700 duration-500 rounded-lg bg-white dark:bg-slate-900" key={index}>
-                <i className={`${item.icon} text-4xl bg-gradient-to-tl to-amber-400 from-fuchsia-600 text-transparent bg-clip-text`}></i>
+                <div className="flex gap-5 items-center">
+                  <i className={`${item.icon} text-4xl bg-gradient-to-tl to-amber-400 from-fuchsia-600 text-transparent bg-clip-text`}></i>
 
-                <div className="content mt-7">
-                  <Link to="" className="title h5 text-lg font-medium hover:text-amber-400 duration-500">
+                  <Link to="" className="title h5 text-lg font-medium ms-4  hover:text-amber-400 duration-500">
                     {item.title}
                   </Link>
+                </div>
+
+                <div className="content mt-7">
                   <p className="text-slate-400 mt-3">{item.desc}</p>
                 </div>
               </div>

@@ -10,7 +10,7 @@ export default function Blogs() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://fajarseptianto.my.id:8877/api/news");
+        const response = await fetch("https://api.rekapitung.id/api/news");
         const result = await response.json();
         if (result.data) {
           setNewsData(result.data);
@@ -28,7 +28,7 @@ export default function Blogs() {
   return (
     <div className="container relative md:mt-24 mt-16">
       <div className="grid grid-cols-1 pb-6 text-center">
-        <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">Latest News</h3>
+        <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">Berita Terkini</h3>
         <p className="text-slate-400 max-w-xl mx-auto">Berita terkini tentang kebaikan dan kepedulian untuk masyarakat</p>
       </div>
 

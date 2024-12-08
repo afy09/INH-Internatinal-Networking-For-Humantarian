@@ -19,7 +19,7 @@ export default function BlogDetails() {
     // Fetch data berdasarkan ID
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://fajarseptianto.my.id:8877/api/distribusi-program/${id}`);
+        const response = await fetch(`https://api.rekapitung.id/api/distribusi-program/${id}`);
         const result = await response.json();
         if (result) {
           setData(result); // Ambil data dari respons

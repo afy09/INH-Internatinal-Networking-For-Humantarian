@@ -13,7 +13,7 @@ export default function Blogs() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://fajarseptianto.my.id:8877/api/distribusi-program");
+        const response = await fetch("https://api.rekapitung.id/api/distribusi-program");
         const result = await response.json();
         if (result.data) {
           setNewsData(result.data);

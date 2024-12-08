@@ -8,7 +8,7 @@ export default function Features({ classlist }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://fajarseptianto.my.id:8877/api/campaign");
+        const response = await fetch("https://api.rekapitung.id/api/campaign");
         const result = await response.json();
         if (result.data) {
           setFeaturesData(result.data);
@@ -28,7 +28,7 @@ export default function Features({ classlist }) {
       <div className={classlist}>
         <div className="grid grid-cols-1 pb-6 text-center">
           <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-            Latest Project <br /> Campaign
+            <br /> Campaign
             <span className="bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Terkini</span>
           </h3>
 
@@ -47,6 +47,11 @@ export default function Features({ classlist }) {
 
                 <div className="p-6">
                   <h5 className="text-lg font-semibold">{item.title}</h5>
+                  {/* <p className="text-slate-400 mt-3">{item.deskripsi}</p> */}
+                </div>
+
+                <div className="mt-8 mb-4 flex justify-center">
+                  <button className="text-lg font-semibold border px-6 py-2 rounded-xl text-white hover:bg-amber-400">Donasi Sekarang</button>
                   {/* <p className="text-slate-400 mt-3">{item.deskripsi}</p> */}
                 </div>
               </div>
