@@ -60,16 +60,9 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-      <div className="relative">
-        <div className="shape absolute sm:-bottom-px -bottom-[2px] start-0 end-0 overflow-hidden z-1 text-white dark:text-slate-900">
-          <svg className="w-full h-auto scale-[2.0] origin-top" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
-          </svg>
-        </div>
-      </div>
 
-      <div className="mx-8">
-        <div className="grid grid-cols-1 pb-6 text-center">
+      <div className="container relative">
+        <div className="grid grid-cols-1 pb-6 text-center ">
           <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
             <br /> Campaign
             <span className="bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Terkini</span>
@@ -81,9 +74,9 @@ export default function AboutUs() {
         {loading ? (
           <div className="text-center">Loading...</div>
         ) : (
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 mb-6 gap-6 ">
             {featuresData.map((item) => (
-              <div className="relative overflow-hidden bg-white dark:bg-slate-900 rounded-md shadow dark:shadow-gray-800" key={item.id}>
+              <div className="relative overflow-hidden bg-white dark:bg-slate-900 rounded-md shadow dark:shadow-gray-800 mx-10" key={item.id}>
                 <div className="p-6 pb-0 relative overflow-hidden after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-72 after:h-72 after:bg-gradient-to-tl after:to-amber-400 after:from-fuchsia-600 after:blur-[80px] after:rounded-full">
                   <img src={item.image} className="relative rounded-t-md shadow-md dark:shadow-slate-700 z-1" alt={item.title} />
                 </div>
@@ -102,7 +95,8 @@ export default function AboutUs() {
           </div>
         )}
       </div>
-      <Footer />
+
+      <Footer className="mt-10" />
       <Switcher />
     </>
   );

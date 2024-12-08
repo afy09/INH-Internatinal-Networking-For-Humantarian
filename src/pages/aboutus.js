@@ -90,44 +90,85 @@ export default function AboutUs() {
               <span className="font-bold">Latar Belakang</span> <br />
             </h3>
             <p className="text-slate-400 ">
-              Dari Gaza untuk Dunia: Gelora Perjuangan Kemanusiaan INH Di tengah kemajuan peradaban abad ke-21, dunia masih menyaksikan sebuah anomali yang mencengangkan: konflik Palestina-Israel. Ini bukan sekadar krisis regional,
-              melainkan sebuah isu milenium yang menantang konsep kemanusiaan dan keadilan global. Palestina berdiri sebagai bukti nyata bahwa di era modern ini, masih ada bangsa yang hidup di bawah penindasan, pembatasan, dan ancaman
-              genosida di depan mata dunia. Paradoks ini menjadi latar belakang yang kuat bagi kelahiran International Networking for Humanitarian (INH), sebuah organisasi yang didirikan oleh Muhammad Husein Gaza dengan visi untuk mengubah
-              paradigma bantuan kemanusiaan. Berawal dari kepedulian mendalam terhadap kondisi Palestina, Muhammad Husein Gaza telah lama berjuang untuk meningkatkan pemahaman dan perhatian terhadap isu-isu kemanusiaan di wilayah ini.
-              Selama lebih dari satu dekade, Husein menjadi saksi hidup penderitaan yang tak terbayangkan di Gaza. Dua belas tahun pengalaman langsung di wilayah konflik ini telah membuka matanya terhadap kegagalan sistemik komunitas
-              internasional dalam menangani krisis kemanusiaan terbesar di era milenium. Husein menyaksikan sendiri betapa besar kebutuhan akan bantuan logistik, dukungan pendidikan bagi anak-anak Palestina, serta kebutuhan dasar seperti
-              sandang dan pangan. Namun, ia juga menyadari bahwa bantuan jangka pendek dan fokus pada logistik semata tidak cukup untuk mengatasi akar permasalahan. Lebih memprihatinkan lagi, ia mengamati bagaimana bantuan konvensional
-              justru mulai mengikis harga diri dan kemandirian warga Palestina. Pada awal kunjungannya ke Gaza, Husein menemukan bahwa masyarakat Palestina memiliki harga diri yang tinggi. Mereka akan mengarahkan bantuan ke tetangga yang
-              lebih membutuhkan ketika ada yang membawa bantuan. Namun, seiring waktu, Husein menyaksikan perubahan mentalitas ini. Ketergantungan pada bantuan luar mulai terbentuk, mengancam etos kerja dan kemandirian yang sebelumnya
-              menjadi ciri khas masyarakat Gaza. Realitas pahit ini menjadi katalis bagi Husein untuk mendirikan INH, sebuah lembaga yang berkomitmen untuk fokus murni pada aspek kemanusiaan, tanpa terkontaminasi oleh agenda politik atau
-              kepentingan kelompok tertentu. INH lahir dari kesadaran bahwa mayoritas organisasi bantuan internasional, meskipun dengan niat baik, seringkali terjebak dalam jaring-jaring kepentingan politik yang kompleks. Alih-alih berdiri
-              teguh pada prinsip kemanusiaan, banyak lembaga besar dunia yang, disadari atau tidak, menjadi perpanjangan tangan dari agenda politik tertentu. Husein berargumen bahwa politisasi bantuan kemanusiaan ini bukan hanya menodai
-              esensi dari misi kemanusiaan itu sendiri, tetapi juga secara langsung berkontribusi pada perpetuasi konflik. Ketika bantuan menjadi alat tawar-menawar politik, penderitaan rakyat Palestina semakin diperpanjang, dan prospek
-              perdamaian semakin menjauh. INH, karenanya, diposisikan sebagai antitesis dari pendekatan yang telah gagal ini. Dalam merumuskan pendekatan INH, Husein terinspirasi oleh ajaran Nabi Muhammad SAW tentang pemberian bantuan yang
-              memberdayakan. Ia merujuk pada sebuah hadis di mana Nabi mengirimkan minyak sebagai bantuan. Dalam tradisi Arab, minyak memiliki multipurpose: untuk cocolan makanan, pengobatan, dan sebagai bahan bakar lampu. Bagi Husein, ini
-              menjadi metafora kuat tentang bagaimana bantuan seharusnya tidak hanya memenuhi kebutuhan sesaat, tetapi juga memberikan alat bagi penerima untuk meningkatkan kualitas hidup mereka secara mandiri. Prinsip ini kemudian menjadi
-              pondasi filosofis bagi pendekatan inovatif yang diusung oleh INH. Organisasi ini tidak hanya bertujuan untuk menyalurkan bantuan logistik dan kebutuhan dasar, tetapi juga berupaya untuk memberikan pendidikan yang layak bagi
-              anak-anak Palestina, serta memberdayakan masyarakat lokal agar dapat mandiri dan sejahtera. INH lahir bukan sekadar sebagai entitas baru dalam lanskap crowded organisasi kemanusiaan, melainkan sebagai manifesto hidup dari
-              sebuah paradigma baru. Organisasi ini menantang status quo dengan memposisikan diri bukan sebagai pemberi bantuan tradisional, tetapi sebagai katalisator pemberdayaan. Visi INH melampaui konsep bantuan konvensional; ia
-              bertujuan untuk merevolusi hubungan antara donatur dan penerima bantuan, mentransformasinya dari dinamika ketergantungan menjadi kemitraan yang setara dan produktif. Pendekatan INH yang berfokus pada pemberdayaan bukan tanpa
-              dasar empiris. Husein menyaksikan bagaimana, ketika diberi kesempatan dan sumber daya yang tepat, masyarakat Gaza menunjukkan resiliensi dan kreativitas yang luar biasa. Contoh nyata dari sebuah perusahaan garmen yang bangkit
-              kembali setelah mendapat suntikan dana strategis menjadi bukti kuat bahwa pemberdayaan ekonomi bukan hanya teori abstrak, tetapi solusi konkret yang dapat mengubah narasi penderitaan menjadi kisah sukses kemandirian. INH
-              berkomitmen untuk mengubah paradigma hubungan antara donatur dan penerima. Alih-alih menciptakan ketergantungan, INH mendorong kemitraan yang setara, di mana masyarakat Palestina dipandang bukan sebagai korban pasif, melainkan
-              sebagai agen aktif dalam pembangunan masa depan mereka sendiri. Husein melihat potensi untuk mentransformasi hubungan ini menjadi seperti hubungan antara investor dan pengusaha, di mana kedua belah pihak memiliki kepentingan
-              dan tanggung jawab yang setara dalam keberhasilan suatu inisiatif. Namun, Husein menyadari bahwa transformasi ini tidak mungkin dicapai oleh satu entitas secara sendirian. Ia mengkritisi kecenderungan organisasi non-pemerintah
-              untuk berkompetisi alih-alih berkolaborasi, sebuah pendekatan yang ia yakini justru melemahkan dampak kolektif upaya kemanusiaan. INH, karenanya, tidak hanya hadir sebagai pelaksana program, tetapi juga sebagai jembatan yang
-              mempromosikan sinergi antar lembaga, mendorong pertukaran pengetahuan dan sumber daya untuk memaksimalkan dampak bantuan yang diberikan. Pendirian INH juga merupakan respons terhadap kegagalan komunitas internasional dalam
-              menyelesaikan konflik Palestina-Israel. Husein berargumen bahwa jika krisis kemanusiaan terbesar di era milenium ini gagal mendapatkan resolusi yang adil, maka ada yang fundamental salah dengan pendekatan global terhadap
-              konflik dan bantuan kemanusiaan. Jika bencana kemanusiaan sebesar ini tidak berhasil mendapatkan perhatian dunia yang memadai, bagaimana mungkin krisis-krisis yang lebih kecil bisa diharapkan untuk mendapat penanganan yang
-              layak? INH, dengan demikian, memposisikan diri tidak hanya sebagai organisasi bantuan, tetapi juga sebagai think tank yang aktif menyuarakan perspektif baru dalam diskursus global tentang resolusi konflik dan pembangunan
-              perdamaian. Organisasi ini berjuang untuk mengembalikan fokus pada esensi kemanusiaan yang murni, membersihkan arena bantuan internasional dari manipulasi politik dan kepentingan sepihak. Dalam esensinya, INH adalah
-              manifestasi dari keyakinan bahwa perubahan nyata dan berkelanjutan di Palestina—dan pada akhirnya di zona konflik lainnya—hanya mungkin terjadi melalui pendekatan holistik yang menggabungkan bantuan darurat dengan pemberdayaan
-              jangka panjang, independensi politik dengan kolaborasi internasional, serta sensitivitas budaya dengan inovasi global. Ini adalah sebuah panggilan untuk mengubah narasi dari “membantu korban” menjadi “memberdayakan agen
-              perubahan”, dari menciptakan ketergantungan menjadi membangun kemandirian. Dengan visi yang ambisius namun dilandasi oleh analisis mendalam dan pengalaman langsung, INH berdiri sebagai beacon of hope di tengah lanskap
-              kemanusiaan yang sering kali terjebak dalam siklus bantuan yang tidak berkelanjutan. Organisasi ini menantang dunia untuk memikirkan kembali konsep bantuan kemanusiaan, mengajak setiap individu dan institusi untuk melihat
-              melampaui statistik dan melihat potensi manusia di balik setiap krisis. INH adalah pengingat bahwa di tengah kompleksitas politik global, kita tidak boleh kehilangan kompas moral kita. Bahwa dalam menghadapi krisis milenium
-              seperti konflik Palestina-Israel, kita harus kembali pada prinsip dasar kemanusiaan: menolong sesama tanpa syarat, memberdayakan yang lemah, dan berjuang untuk keadilan bagi semua. Melalui INH, Husein dan timnya tidak hanya
-              bermimpi tentang Palestina yang damai dan makmur, tetapi aktif memetakan dan membangun jalan menuju realitas tersebut, satu program pemberdayaan pada satu waktu.
+              Di tengah kemajuan peradaban abad ke-21, dunia masih menyaksikan sebuah anomali yang mencengangkan: konflik Palestina-Israel. Ini bukan sekadar krisis regional, melainkan sebuah isu milenium yang menantang konsep kemanusiaan
+              dan keadilan global. Palestina berdiri sebagai bukti nyata bahwa di era modern ini, masih ada bangsa yang hidup di bawah penindasan, pembatasan, dan ancaman genosida di depan mata dunia. Paradoks ini menjadi latar belakang
+              yang kuat bagi kelahiran International Networking for Humanitarian (INH), sebuah organisasi yang didirikan oleh Muhammad Husein Gaza dengan visi untuk mengubah paradigma bantuan kemanusiaan.
+            </p>
+
+            <p className="text-slate-400 mt-6">
+              Berawal dari kepedulian mendalam terhadap kondisi Palestina, Muhammad Husein Gaza telah lama berjuang untuk meningkatkan pemahaman dan perhatian terhadap isu-isu kemanusiaan di wilayah ini. Selama lebih dari satu dekade,
+              Husein menjadi saksi hidup penderitaan yang tak terbayangkan di Gaza. Dua belas tahun pengalaman langsung di wilayah konflik ini telah membuka matanya terhadap kegagalan sistemik komunitas internasional dalam menangani krisis
+              kemanusiaan terbesar di era milenium.
+            </p>
+
+            <p className="text-slate-400 mt-6">
+              Husein menyaksikan sendiri betapa besar kebutuhan akan bantuan logistik, dukungan pendidikan bagi anak-anak Palestina, serta kebutuhan dasar seperti sandang dan pangan. Namun, ia juga menyadari bahwa bantuan jangka pendek dan
+              fokus pada logistik semata tidak cukup untuk mengatasi akar permasalahan. Lebih memprihatinkan lagi, ia mengamati bagaimana bantuan konvensional justru mulai mengikis harga diri dan kemandirian warga Palestina.
+            </p>
+            <p className="text-slate-400 mt-6">
+              Pada awal kunjungannya ke Gaza, Husein menemukan bahwa masyarakat Palestina memiliki harga diri yang tinggi. Mereka akan mengarahkan bantuan ke tetangga yang lebih membutuhkan ketika ada yang membawa bantuan. Namun, seiring
+              waktu, Husein menyaksikan perubahan mentalitas ini. Ketergantungan pada bantuan luar mulai terbentuk, mengancam etos kerja dan kemandirian yang sebelumnya menjadi ciri khas masyarakat Gaza.
+            </p>
+            <p className="text-slate-400 mt-6">
+              Realitas pahit ini menjadi katalis bagi Husein untuk mendirikan INH, sebuah lembaga yang berkomitmen untuk fokus murni pada aspek kemanusiaan, tanpa terkontaminasi oleh agenda politik atau kepentingan kelompok tertentu. INH
+              lahir dari kesadaran bahwa mayoritas organisasi bantuan internasional, meskipun dengan niat baik, seringkali terjebak dalam jaring-jaring kepentingan politik yang kompleks. Alih-alih berdiri teguh pada prinsip kemanusiaan,
+              banyak lembaga besar dunia yang, disadari atau tidak, menjadi perpanjangan tangan dari agenda politik tertentu.
+            </p>
+            <p className="text-slate-400 mt-6">
+              Husein berargumen bahwa politisasi bantuan kemanusiaan ini bukan hanya menodai esensi dari misi kemanusiaan itu sendiri, tetapi juga secara langsung berkontribusi pada perpetuasi konflik. Ketika bantuan menjadi alat
+              tawar-menawar politik, penderitaan rakyat Palestina semakin diperpanjang, dan prospek perdamaian semakin menjauh. INH, karenanya, diposisikan sebagai antitesis dari pendekatan yang telah gagal ini.
+            </p>
+            <p className="text-slate-400 mt-6">
+              Dalam merumuskan pendekatan INH, Husein terinspirasi oleh ajaran Nabi Muhammad SAW tentang pemberian bantuan yang memberdayakan. Ia merujuk pada sebuah hadis di mana Nabi mengirimkan minyak sebagai bantuan. Dalam tradisi Arab,
+              minyak memiliki multipurpose: untuk cocolan makanan, pengobatan, dan sebagai bahan bakar lampu. Bagi Husein, ini menjadi metafora kuat tentang bagaimana bantuan seharusnya tidak hanya memenuhi kebutuhan sesaat, tetapi juga
+              memberikan alat bagi penerima untuk meningkatkan kualitas hidup mereka secara mandiri.
+            </p>
+            <p className="text-slate-400 mt-6">
+              Prinsip ini kemudian menjadi pondasi filosofis bagi pendekatan inovatif yang diusung oleh INH. Organisasi ini tidak hanya bertujuan untuk menyalurkan bantuan logistik dan kebutuhan dasar, tetapi juga berupaya untuk memberikan
+              pendidikan yang layak bagi anak-anak Palestina, serta memberdayakan masyarakat lokal agar dapat mandiri dan sejahtera.
+            </p>
+            <p className="text-slate-400 mt-6">
+              INH lahir bukan sekadar sebagai entitas baru dalam lanskap crowded organisasi kemanusiaan, melainkan sebagai manifesto hidup dari sebuah paradigma baru. Organisasi ini menantang status quo dengan memposisikan diri bukan
+              sebagai pemberi bantuan tradisional, tetapi sebagai katalisator pemberdayaan. Visi INH melampaui konsep bantuan konvensional; ia bertujuan untuk merevolusi hubungan antara donatur dan penerima bantuan, mentransformasinya dari
+              dinamika ketergantungan menjadi kemitraan yang setara dan produktif.
+            </p>
+            <p className="text-slate-400 mt-6">
+              Pendekatan INH yang berfokus pada pemberdayaan bukan tanpa dasar empiris. Husein menyaksikan bagaimana, ketika diberi kesempatan dan sumber daya yang tepat, masyarakat Gaza menunjukkan resiliensi dan kreativitas yang luar
+              biasa. Contoh nyata dari sebuah perusahaan garmen yang bangkit kembali setelah mendapat suntikan dana strategis menjadi bukti kuat bahwa pemberdayaan ekonomi bukan hanya teori abstrak, tetapi solusi konkret yang dapat mengubah
+              narasi penderitaan menjadi kisah sukses kemandirian.
+            </p>
+            <p className="text-slate-400 mt-6">
+              INH berkomitmen untuk mengubah paradigma hubungan antara donatur dan penerima. Alih-alih menciptakan ketergantungan, INH mendorong kemitraan yang setara, di mana masyarakat Palestina dipandang bukan sebagai korban pasif,
+              melainkan sebagai agen aktif dalam pembangunan masa depan mereka sendiri. Husein melihat potensi untuk mentransformasi hubungan ini menjadi seperti hubungan antara investor dan pengusaha, di mana kedua belah pihak memiliki
+              kepentingan dan tanggung jawab yang setara dalam keberhasilan suatu inisiatif.
+            </p>
+            <p className="text-slate-400 mt-6">
+              Namun, Husein menyadari bahwa transformasi ini tidak mungkin dicapai oleh satu entitas secara sendirian. Ia mengkritisi kecenderungan organisasi non-pemerintah untuk berkompetisi alih-alih berkolaborasi, sebuah pendekatan yang
+              ia yakini justru melemahkan dampak kolektif upaya kemanusiaan. INH, karenanya, tidak hanya hadir sebagai pelaksana program, tetapi juga sebagai jembatan yang mempromosikan sinergi antar lembaga, mendorong pertukaran
+              pengetahuan dan sumber daya untuk memaksimalkan dampak bantuan yang diberikan.
+            </p>
+            <p className="text-slate-400 mt-6">
+              Pendirian INH juga merupakan respons terhadap kegagalan komunitas internasional dalam menyelesaikan konflik Palestina-Israel. Husein berargumen bahwa jika krisis kemanusiaan terbesar di era milenium ini gagal mendapatkan
+              resolusi yang adil, maka ada yang fundamental salah dengan pendekatan global terhadap konflik dan bantuan kemanusiaan. Jika bencana kemanusiaan sebesar ini tidak berhasil mendapatkan perhatian dunia yang memadai, bagaimana
+              mungkin krisis-krisis yang lebih kecil bisa diharapkan untuk mendapat penanganan yang layak?
+            </p>
+            <p className="text-slate-400 mt-6">
+              INH, dengan demikian, memposisikan diri tidak hanya sebagai organisasi bantuan, tetapi juga sebagai think tank yang aktif menyuarakan perspektif baru dalam diskursus global tentang resolusi konflik dan pembangunan perdamaian.
+              Organisasi ini berjuang untuk mengembalikan fokus pada esensi kemanusiaan yang murni, membersihkan arena bantuan internasional dari manipulasi politik dan kepentingan sepihak.
+            </p>
+            <p className="text-slate-400 mt-6">
+              Dalam esensinya, INH adalah manifestasi dari keyakinan bahwa perubahan nyata dan berkelanjutan di Palestina—dan pada akhirnya di zona konflik lainnya—hanya mungkin terjadi melalui pendekatan holistik yang menggabungkan bantuan
+              darurat dengan pemberdayaan jangka panjang, independensi politik dengan kolaborasi internasional, serta sensitivitas budaya dengan inovasi global. Ini adalah sebuah panggilan untuk mengubah narasi dari “membantu korban”
+              menjadi “memberdayakan agen perubahan”, dari menciptakan ketergantungan menjadi membangun kemandirian.
+            </p>
+            <p className="text-slate-400 mt-6">
+              Dengan visi yang ambisius namun dilandasi oleh analisis mendalam dan pengalaman langsung, INH berdiri sebagai beacon of hope di tengah lanskap kemanusiaan yang sering kali terjebak dalam siklus bantuan yang tidak
+              berkelanjutan. Organisasi ini menantang dunia untuk memikirkan kembali konsep bantuan kemanusiaan, mengajak setiap individu dan institusi untuk melihat melampaui statistik dan melihat potensi manusia di balik setiap krisis.
+            </p>
+            <p className="text-slate-400 mt-6">
+              INH adalah pengingat bahwa di tengah kompleksitas politik global, kita tidak boleh kehilangan kompas moral kita. Bahwa dalam menghadapi krisis milenium seperti konflik Palestina-Israel, kita harus kembali pada prinsip dasar
+              kemanusiaan: menolong sesama tanpa syarat, memberdayakan yang lemah, dan berjuang untuk keadilan bagi semua. Melalui INH, Husein dan timnya tidak hanya bermimpi tentang Palestina yang damai dan makmur, tetapi aktif memetakan
+              dan membangun jalan menuju realitas tersebut, satu program pemberdayaan pada satu waktu.
             </p>
           </div>
         </div>

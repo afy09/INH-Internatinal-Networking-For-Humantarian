@@ -57,52 +57,30 @@ export default function AboutUs() {
         <div className="container relative md:mt-24 ">
           <div className="lg:flex justify-center">
             <div className="lg:w-4/5">
-              <ul className="md:flex inline-block w-fit mx-auto flex-wrap justify-center text-center p-2 bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 rounded-md">
-                <li role="presentation" className="inline-block md:w-1/2 w-full p-2">
-                  <button
-                    className={`${activeIndex === 0 ? "text-white bg-amber-400" : " hover:text-amber-400 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-slate-800"} px-5 py-3 text-start rounded-md w-full duration-500 `}
-                    onClick={() => setActiveIndex(0)}>
-                    <h5 className="text-base font-semibold">Visi Kami</h5>
-                  </button>
-                </li>
-                <li role="presentation" className="inline-block md:w-1/2 w-full p-2">
-                  <button
-                    className={`${activeIndex === 1 ? "text-white bg-amber-400" : " hover:text-amber-400 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-slate-800"} px-5 py-3 text-start rounded-md w-full duration-500 `}
-                    onClick={() => setActiveIndex(1)}>
-                    <h5 className="text-base font-semibold">Misi Kami</h5>
-                  </button>
-                </li>
-              </ul>
-
               <div id="StarterContent" className="mt-6">
-                {activeIndex === 0 ? (
-                  <div>
-                    <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30  from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 pb-6">
-                      <p>
-                        Menjadi lembaga kemanusiaan profesional berskala internasional yang mengedepankan sisi humanisme dalam mengemban tugas kemanusiaan demi mengembalikan stabilitas kehidupan di tengah masyarakat dunia. <br /> To become
-                        a professional humanitarian organization on an international scale that prioritizes humanism in carrying out humanitarian tasks in order to restore stability to life in the world community.
-                      </p>
-                    </div>
+                <div>
+                  <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30  from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 pb-6">
+                    <h3 className="text-2xl font-semibold mb-4">Visi Kami</h3>
+                    <p>
+                      Menjadi lembaga kemanusiaan profesional berskala internasional yang mengedepankan sisi humanisme dalam mengemban tugas kemanusiaan demi mengembalikan stabilitas kehidupan di tengah masyarakat dunia. <br /> To become a
+                      professional humanitarian organization on an international scale that prioritizes humanism in carrying out humanitarian tasks in order to restore stability to life in the world community.
+                    </p>
                   </div>
-                ) : (
-                  ""
-                )}
-                {activeIndex === 1 ? (
-                  <div>
-                    <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30  from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 pb-6">
-                      <p>
-                        Memfasilitasi setiap individu maupun kelompok yang memiliki jiwa relawan, yang ingin mendedikasikan potensinya untuk masyarakat yang membutuhkan, baik secara nasional hingga internasional. Mewujudkan harapan
-                        masyarakat yang membutuhkan untuk bisa hidup layak. Memberikan solusi efektif dan efisien dalam menanggulangi krisis kemanusiaan di dunia terutama di wilayah tertinggal, terdalam, dan terluar. Mengoptimalkan potensi
-                        kedermawanan masyarakat Indonesia dan dunia terhadap individu maupun kelompok yang hidup dalam krisis kemanusiaan dengan mengelola bantuan secara tepat dan akurat. Facilitate every individual or group who has a
-                        volunteer spirit, who wants to dedicate their potential to communities in need, both nationally and internationally. Realizing the hopes of people who need to be able to live a decent life. Providing effective and
-                        efficient solutions in overcoming humanitarian crises in the world, especially in underdeveloped, deepest and outermost regions. Optimizing the generosity potential of the people of Indonesia and the world towards
-                        individuals and groups living in humanitarian crises by managing aid in a timely and accurate manner.
-                      </p>
-                    </div>
+                </div>
+
+                <div className="mt-6">
+                  <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30  from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 pb-6">
+                    <h3 className="text-2xl font-semibold mb-4">Misi Kami</h3>
+                    <p>
+                      Memfasilitasi setiap individu maupun kelompok yang memiliki jiwa relawan, yang ingin mendedikasikan potensinya untuk masyarakat yang membutuhkan, baik secara nasional hingga internasional. Mewujudkan harapan masyarakat
+                      yang membutuhkan untuk bisa hidup layak. Memberikan solusi efektif dan efisien dalam menanggulangi krisis kemanusiaan di dunia terutama di wilayah tertinggal, terdalam, dan terluar. Mengoptimalkan potensi kedermawanan
+                      masyarakat Indonesia dan dunia terhadap individu maupun kelompok yang hidup dalam krisis kemanusiaan dengan mengelola bantuan secara tepat dan akurat. Facilitate every individual or group who has a volunteer spirit,
+                      who wants to dedicate their potential to communities in need, both nationally and internationally. Realizing the hopes of people who need to be able to live a decent life. Providing effective and efficient solutions in
+                      overcoming humanitarian crises in the world, especially in underdeveloped, deepest and outermost regions. Optimizing the generosity potential of the people of Indonesia and the world towards individuals and groups
+                      living in humanitarian crises by managing aid in a timely and accurate manner.
+                    </p>
                   </div>
-                ) : (
-                  ""
-                )}
+                </div>
               </div>
             </div>
           </div>

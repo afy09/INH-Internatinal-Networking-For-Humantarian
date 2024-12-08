@@ -6,6 +6,7 @@ import logoLight from "../assets/images/Logo-INH.png";
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const [dropdown, setDropdown] = useState({});
 
   useEffect(() => {
     activateMenu();
@@ -103,6 +104,13 @@ export default function Navbar() {
     }
   }
 
+  const toggleDropdown = (menu) => {
+    setDropdown((prev) => ({
+      ...prev,
+      [menu]: !prev[menu],
+    }));
+  };
+
   return (
     <>
       <nav id="topnav" className={`${scroll ? "nav-sticky" : ""} defaultscroll is-sticky`}>
@@ -135,18 +143,6 @@ export default function Navbar() {
           </ul>
           <div id="navigation" className={`${toggleMenu ? "block" : ""}`}>
             <ul className="navigation-menu">
-              {/* <li className="has-submenu parent-menu-item">
-                <Link to="/">Beranda</Link>
-                <span className="menu-arrow"></span>
-                <ul className="submenu">
-                  <li>
-                    <Link to="/index-three" className="sub-menu-item">
-                      Submenu
-                    </Link>
-                  </li>
-                </ul>
-              </li> */}
-
               <li>
                 <Link to="/" className="sub-menu-item">
                   Beranda
