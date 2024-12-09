@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 import bannerImg from "../assets/images/lewatobi.png";
 import BgLaptop from "../assets/images/bg-laptop.png";
+import Tentang from "../assets/images/lewatobi.png";
+import Palestina from "../assets/images/Palestina.jpg";
+import Sukabumi from "../assets/images/sukabumi1.jpg";
 import Navbar from "../components/navbar";
 import BrandLogo from "../components/brandLogo";
 import Features from "../components/features";
@@ -14,6 +17,11 @@ import Blogs from "../components/blogs";
 import Footer from "../components/footer";
 import Switcher from "../components/switcher";
 import { TypeAnimation } from "react-type-animation";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules"; // Import Autoplay
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function Index() {
   useEffect(() => {
@@ -53,15 +61,38 @@ export default function Index() {
                 Berkomitmen mengajak seluruh elemen masyarakat, lembaga, perusahaan, dan pemerintah untuk bersatu dalam meningkatkan peran sosial dalam penanggulangan krisis kemanusiaan.
               </p>
 
-              <div className="mt-6">
+              {/* <div className="mt-6">
                 <Link to="" className="py-2 px-6 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border-amber-400 hover:border-amber-500 text-white rounded-md">
                   Lanjut
                 </Link>
-              </div>
+              </div> */}
             </div>
-            <div className=" mt-8 z-3 md:flex md:gap-3 justify-center">
-              <div>
-                <img src={BgLaptop} alt="" className="mover rounded-lg" />
+            <div className="mt-8 z-3 md:flex md:gap-3 justify-center rounded-xl ">
+              <div className="relative">
+                {/* Frame Laptop */}
+                <img src={BgLaptop} alt="Laptop Frame" className="rounded-lg" />
+                {/* Slider Area */}
+                <div className="absolute inset-0 p-8 rounded-xl">
+                  <Swiper
+                    modules={[Pagination, Autoplay]} // Tambahkan Autoplay
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 2000, disableOnInteraction: false }} // Konfigurasi auto-slide
+                    loop={true}
+                    className="h-full w-full">
+                    {/* Slide 1 */}
+                    <SwiperSlide>
+                      <img src={Tentang} alt="Slide 1" className=" object-contain rounded-xl" />
+                    </SwiperSlide>
+                    {/* Slide 2 */}
+                    <SwiperSlide>
+                      <img src={Sukabumi} alt="Slide 2" className="object-contain rounded-xl" />
+                    </SwiperSlide>
+                    {/* Slide 3 */}
+                    <SwiperSlide>
+                      <img src={Palestina} alt="Slide 3" className=" object-contain rounded-xl" />
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
               </div>
             </div>
           </div>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import AboutImg from "../assets/images/bg-about.png";
+import InhVid from "../assets/images/inh-vid.png";
+import Tentang from "../assets/images/tentang.png";
 import Footer from "../components/footer";
 import Switcher from "../components/switcher";
 import Navbar from "../components/navbar";
@@ -114,6 +116,7 @@ export default function AboutUs() {
               lahir dari kesadaran bahwa mayoritas organisasi bantuan internasional, meskipun dengan niat baik, seringkali terjebak dalam jaring-jaring kepentingan politik yang kompleks. Alih-alih berdiri teguh pada prinsip kemanusiaan,
               banyak lembaga besar dunia yang, disadari atau tidak, menjadi perpanjangan tangan dari agenda politik tertentu.
             </p>
+            <img src={InhVid} alt="" className="mt-6" />
             <p className="text-slate-400 mt-6">
               Husein berargumen bahwa politisasi bantuan kemanusiaan ini bukan hanya menodai esensi dari misi kemanusiaan itu sendiri, tetapi juga secara langsung berkontribusi pada perpetuasi konflik. Ketika bantuan menjadi alat
               tawar-menawar politik, penderitaan rakyat Palestina semakin diperpanjang, dan prospek perdamaian semakin menjauh. INH, karenanya, diposisikan sebagai antitesis dari pendekatan yang telah gagal ini.
@@ -142,11 +145,13 @@ export default function AboutUs() {
               melainkan sebagai agen aktif dalam pembangunan masa depan mereka sendiri. Husein melihat potensi untuk mentransformasi hubungan ini menjadi seperti hubungan antara investor dan pengusaha, di mana kedua belah pihak memiliki
               kepentingan dan tanggung jawab yang setara dalam keberhasilan suatu inisiatif.
             </p>
+
             <p className="text-slate-400 mt-6">
               Namun, Husein menyadari bahwa transformasi ini tidak mungkin dicapai oleh satu entitas secara sendirian. Ia mengkritisi kecenderungan organisasi non-pemerintah untuk berkompetisi alih-alih berkolaborasi, sebuah pendekatan yang
               ia yakini justru melemahkan dampak kolektif upaya kemanusiaan. INH, karenanya, tidak hanya hadir sebagai pelaksana program, tetapi juga sebagai jembatan yang mempromosikan sinergi antar lembaga, mendorong pertukaran
               pengetahuan dan sumber daya untuk memaksimalkan dampak bantuan yang diberikan.
             </p>
+            <img src={Tentang} alt="" className="mt-6" />
             <p className="text-slate-400 mt-6">
               Pendirian INH juga merupakan respons terhadap kegagalan komunitas internasional dalam menyelesaikan konflik Palestina-Israel. Husein berargumen bahwa jika krisis kemanusiaan terbesar di era milenium ini gagal mendapatkan
               resolusi yang adil, maka ada yang fundamental salah dengan pendekatan global terhadap konflik dan bantuan kemanusiaan. Jika bencana kemanusiaan sebesar ini tidak berhasil mendapatkan perhatian dunia yang memadai, bagaimana

@@ -6,7 +6,6 @@ import logoLight from "../assets/images/Logo-INH.png";
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [dropdown, setDropdown] = useState({});
 
   useEffect(() => {
     activateMenu();
@@ -104,13 +103,6 @@ export default function Navbar() {
     }
   }
 
-  const toggleDropdown = (menu) => {
-    setDropdown((prev) => ({
-      ...prev,
-      [menu]: !prev[menu],
-    }));
-  };
-
   return (
     <>
       <nav id="topnav" className={`${scroll ? "nav-sticky" : ""} defaultscroll is-sticky`}>
@@ -149,10 +141,10 @@ export default function Navbar() {
                 </Link>
               </li>
 
-              <li className="has-submenu parent-parent-menu-item">
+              <li className="has-submenu parent-menu-item">
                 <Link to="#">Tentang Kami</Link>
                 <span className="menu-arrow"></span>
-                <ul className="submenu">
+                <ul className="submenu open">
                   <li>
                     <Link to="/aboutus" className="sub-menu-item">
                       Latar Belakang
@@ -205,7 +197,7 @@ export default function Navbar() {
               <li className="has-submenu parent-parent-menu-item">
                 <Link to="/newsinh">Publikasi</Link>
                 <span className="menu-arrow"></span>
-                <ul className="submenu">
+                <ul className="submenu open">
                   <li>
                     <Link to="/newsinh" className="sub-menu-item">
                       News INH
