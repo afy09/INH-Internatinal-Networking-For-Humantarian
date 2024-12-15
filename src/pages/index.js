@@ -22,6 +22,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules"; // Import Autoplay
 import "swiper/css";
 import "swiper/css/pagination";
+import Pengumuman from "../components/pengumuman2";
 
 export default function Index() {
   useEffect(() => {
@@ -107,6 +108,7 @@ export default function Index() {
         <AboutThree />
 
         <Blogs />
+        <Pengumuman/>
       </section>
       <section className="pt-6">
         <BrandLogo />
