@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Features({ classlist }) {
   const [featuresData, setFeaturesData] = useState([]);
@@ -51,7 +52,9 @@ export default function Features({ classlist }) {
                 </div>
 
                 <div className="mt-8 mb-4 flex justify-center">
-                  <button className="text-lg font-semibold border px-6 py-2 rounded-xl text-white hover:bg-amber-400">Donasi Sekarang</button>
+                  <Link to={`/donasi-detail/${item.id}`}>
+                    <button className="text-lg font-semibold border px-6 py-2 rounded-xl text-white hover:bg-amber-400">Donasi Sekarang</button>
+                  </Link>
                   {/* <p className="text-slate-400 mt-3">{item.deskripsi}</p> */}
                 </div>
               </div>

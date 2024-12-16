@@ -13,6 +13,7 @@ import Legalitas from "./pages/legalitas";
 import Pricing from "./pages/pricing";
 import Services from "./pages/services";
 import BlogDetails from "./pages/blog-detail";
+import DonasiDetails from "./pages/detailDonasi";
 import Helpcenter from "./pages/helpcenter";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
@@ -42,7 +43,7 @@ function App() {
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/services" element={<Services />} />
       <Route path="/daftarprogram" element={<DaftarProgram />} />
-      <Route path="/blog-detail" element={<BlogDetails />} />
+      <Route path="/donasi-detail/:id" element={<DonasiDetails />} />
       <Route path="/blog-detail/:id" element={<BlogDetails />} />
       <Route path="/newsinh" element={<NewsInh />} />
       <Route path="/distribusi" element={<Distribusi />} />
