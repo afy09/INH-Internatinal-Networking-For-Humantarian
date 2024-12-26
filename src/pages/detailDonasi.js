@@ -1,35 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { Form, Link, useParams } from "react-router-dom";
-import BcaLogo from "../assets/images/client/path_to_bca_logo.png";
-import BniLogo from "../assets/images/client/path_to_bni_logo.png";
-import BriLogo from "../assets/images/client/path_to_bri_logo.png";
-import MandiriLogo from "../assets/images/client/path_to_mandiri_logo.png";
-
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Switcher from "../components/switcher";
+import LogoInhGold from "../assets/images/Logo-INH-Gold.png";
 
 export default function DonasiDetails() {
   const { id } = useParams(); // Mendapatkan ID dari parameter URL
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [nominal, setNominal] = useState(""); // State untuk nominal donasi
-  const [selectedPayment, setSelectedPayment] = useState(null);
-
-  const paymentMethods = [
-    { id: "bca", name: "BCA", logo: BcaLogo },
-    { id: "bni", name: "BNI", logo: BniLogo },
-    { id: "bri", name: "BANK BRI", logo: BriLogo },
-    { id: "mandiri", name: "Mandiri", logo: MandiriLogo },
-  ];
-
-  const handlePaymentSelect = (e, id) => {
-    e.preventDefault(); // Mencegah default behavior
-    setSelectedPayment(id); // Mengatur metode pembayaran yang dipilih
-  };
+  const [nominal, setNominal] = useState("");
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [redirectUrl, setRedirectUrl] = useState("");
 
   // Daftar nominal yang akan di-mapping
   const nominalOptions = [10000, 30000, 50000, 80000, 100000];
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    amount: "",
+  });
+
+  const isButtonDisabled = formData.name == "";
 
   const handleNominalClick = (e, value) => {
     e.preventDefault(); // Mencegah default behavior
@@ -76,6 +69,34 @@ export default function DonasiDetails() {
     );
   }
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("https://api.rekapitung.id/api/payment", {
+        name: formData.name,
+        email: formData.email,
+        amount: parseInt(formData.amount), // Pastikan amount dikirim sebagai angka
+      });
+
+      if (response.data && response.data.url) {
+        setRedirectUrl(response.data.url);
+        setPopupVisible(true);
+      }
+    } catch (error) {
+      console.error("Error posting data:", error);
+      alert("Gagal mengirim data. Silakan coba lagi.");
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -93,7 +114,7 @@ export default function DonasiDetails() {
               <p className="text-slate-400 text-lg mt-3">{data.deskripsi}</p>
 
               <div className="mt-5">
-                <form className="text-start mt-4">
+                <form onSubmit={handleSubmit} className="text-start mt-4">
                   <div className="grid grid-cols-1">
                     <div>
                       <label className="font-semibold" htmlFor="RegisterName">
@@ -103,12 +124,17 @@ export default function DonasiDetails() {
                       {/* Mapping tombol pilihan nominal */}
                       <div className="flex gap-6 mt-3 flex-wrap">
                         {nominalOptions.map((value) => (
-                          <div>
+                          <div key={value}>
                             <button
-                              type="submit"
-                              key={value}
+                              type="button"
                               className={`py-2 px-4 rounded border border-amber-400 ${nominal === value.toString() ? "bg-amber-400 text-white" : "bg-gray-200"}`}
-                              onClick={(e) => handleNominalClick(e, value.toString())}>
+                              onClick={(e) => {
+                                handleNominalClick(e, value.toString()); // Tetap menggunakan fungsi pilih nominal yang sudah ada
+                                setFormData((prevFormData) => ({
+                                  ...prevFormData,
+                                  amount: value, // Perbarui nilai formData.amount
+                                }));
+                              }}>
                               Rp {value.toLocaleString("id-ID")}
                             </button>
                           </div>
@@ -120,26 +146,17 @@ export default function DonasiDetails() {
                         id="RegisterName"
                         type="text"
                         value={nominal}
-                        onChange={(e) => setNominal(e.target.value)} // Input manual
+                        onChange={(e) => {
+                          const inputValue = e.target.value;
+                          setNominal(inputValue); // Perbarui state nominal
+                          setFormData((prevFormData) => ({
+                            ...prevFormData,
+                            amount: inputValue ? parseInt(inputValue, 10) || 0 : 0, // Perbarui formData.amount dengan nilai dari input
+                          }));
+                        }}
                         className="form-input mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-amber-400 dark:border-gray-800 dark:focus:border-amber-400 focus:ring-0"
                         placeholder="Masukkan nominal lainnya"
                       />
-                    </div>
-
-                    {/* METODE PEMBAYARAN */}
-                    <div className="mt-5">
-                      <h3 className="font-semibold mb-3">Pilih Metode Pembayaran : </h3>
-                      <div className="flex gap-6 flex-wrap">
-                        {paymentMethods.map((method) => (
-                          <button
-                            key={method.id}
-                            onClick={(e) => handlePaymentSelect(e, method.id)}
-                            className={`relative border-2 rounded p-2 flex justify-center bg-white items-center ${selectedPayment === method.id ? "border-amber-400 bg-gray-100" : "border-gray-300"}`}>
-                            <img src={method.logo} alt={method.name} className="w-16 h-10 object-contain rounded-md" />
-                            {selectedPayment === method.id && <div className="absolute -top-2 -right-2 bg-amber-400 text-white rounded-full w-6 h-6 flex items-center justify-center">✓</div>}
-                          </button>
-                        ))}
-                      </div>
                     </div>
 
                     {/* PESAN DAN DOA */}
@@ -155,25 +172,26 @@ export default function DonasiDetails() {
                     </div>
 
                     <div className="mb-4">
-                      <label className="font-semibold" htmlFor="LoginEmail">
-                        Email :
-                      </label>
+                      <label className="font-semibold">Nama Lengkap :</label>
                       <input
-                        id="LoginEmail"
-                        type="email"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        type="text"
                         className="form-input mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-amber-400 dark:border-gray-800 dark:focus:border-amber-400 focus:ring-0"
-                        placeholder="name@example.com"
+                        placeholder="Masukkan Nama"
                       />
                     </div>
 
                     <div className="mb-4">
-                      <label className="font-semibold" htmlFor="LoginEmail">
-                        Nomor Handphone / WhatsApp :
-                      </label>
+                      <label className="font-semibold">Email :</label>
                       <input
-                        type="number"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        type="email"
                         className="form-input mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-amber-400 dark:border-gray-800 dark:focus:border-amber-400 focus:ring-0"
-                        placeholder="0812345....."
+                        placeholder="Masukkan Email"
                       />
                     </div>
 
@@ -195,11 +213,14 @@ export default function DonasiDetails() {
                     </div>
 
                     <div className="mb-4">
-                      <input
+                      <button
                         type="submit"
-                        className="py-2 px-5 inline-block tracking-wide border align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border-amber-400 hover:border-amberbg-amber-500 text-white rounded-md w-full"
-                        value="Lanjut Pembayaran"
-                      />
+                        className={`py-2 px-5 inline-block tracking-wide border align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border-amber-400 hover:border-amberbg-amber-500 text-white rounded-md w-full cursor-pointer ${
+                          isButtonDisabled ? "bg-gray-100 cursor-not-allowed" : ""
+                        }`}
+                        disabled={isButtonDisabled}>
+                        Kirim
+                      </button>
                     </div>
                   </div>
                 </form>
@@ -208,6 +229,25 @@ export default function DonasiDetails() {
           </div>
         </div>
       </section>
+
+      {popupVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center w-96">
+            {/* Gambar*/}
+            <img src={LogoInhGold} className="mx-auto block" alt="" />
+
+            {/* Tombol Lanjut */}
+            <div className=" mt-6 px-6 py-2 text-black bg-amber-400 hover:bg-amber-500 rounded">
+              <a href={redirectUrl} target="_blank" rel="noopener noreferrer" className="">
+                Lanjut Pembayaran
+              </a>
+            </div>
+            <div onClick={() => setPopupVisible(false)} className=" mt-2 px-6 py-2  text-amber-400 border border-amber-400 rounded">
+              <button>Batal</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
       <Switcher />
