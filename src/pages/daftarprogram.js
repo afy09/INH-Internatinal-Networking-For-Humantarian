@@ -87,7 +87,9 @@ export default function AboutUs() {
                 </div>
 
                 <div className="mt-8 mb-4 flex justify-center">
-                  <button className="text-lg font-semibold border px-6 py-2 rounded-xl text-white hover:bg-amber-400">Donasi Sekarang</button>
+                  <Link to="https://api.rekapitung.id/api/pay" target="_blank">
+                    <button className="text-lg font-semibold border px-6 py-2 rounded-xl text-white hover:bg-amber-400">Donasi Sekarang</button>
+                  </Link>
                   {/* <p className="text-slate-400 mt-3">{item.deskripsi}</p> */}
                 </div>
               </div>
