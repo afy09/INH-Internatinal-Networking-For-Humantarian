@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 export default function Features({ classlist }) {
   const [featuresData, setFeaturesData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleDescription = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   // Fetch data from the backend
   useEffect(() => {
@@ -40,15 +45,23 @@ export default function Features({ classlist }) {
           <div className="text-center">Loading...</div>
         ) : (
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
-            {featuresData.map((item) => (
+            {featuresData.map((item, index) => (
               <div className="relative overflow-hidden bg-white dark:bg-slate-900 rounded-md shadow dark:shadow-gray-800" key={item.id}>
                 <div className="p-6 pb-0 relative overflow-hidden after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-72 after:h-72 after:bg-gradient-to-tl after:to-amber-400 after:from-fuchsia-600 after:blur-[80px] after:rounded-full">
                   <img src={item.image} className="relative rounded-t-md shadow-md dark:shadow-slate-700 z-1" alt={item.title} />
                 </div>
 
                 <div className="p-6">
-                  <h5 className="text-lg font-semibold">{item.title}</h5>
-                  {/* <p className="text-slate-400 mt-3">{item.deskripsi}</p> */}
+                  <h5 className="text-lg font-semibold h-10">{item.title}</h5>
+                  <p className="text-slate-400 mt-4">
+                    {item.deskripsi.length > 50 ? (expandedIndex === index ? item.deskripsi : `${item.deskripsi.substring(0, 50)}...`) : item.deskripsi}
+
+                    {item.deskripsi.length > 50 && (
+                      <button onClick={() => toggleDescription(index)}>
+                        <p className="text-amber-400 underline">{expandedIndex === index ? "Tutup" : "Selengkapnya"}</p>
+                      </button>
+                    )}
+                  </p>
                 </div>
 
                 <div className="mt-8 mb-4 flex justify-center">
@@ -58,7 +71,6 @@ export default function Features({ classlist }) {
                   {/* <Link to={`/donasi-detail/${item.id}`}>
                     <button className="text-lg font-semibold border px-6 py-2 rounded-xl text-white hover:bg-amber-400">Donasi Sekarang</button>
                   </Link> */}
-                  {/* <p className="text-slate-400 mt-3">{item.deskripsi}</p> */}
                 </div>
               </div>
             ))}
