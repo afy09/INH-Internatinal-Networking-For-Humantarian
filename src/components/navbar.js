@@ -150,11 +150,11 @@ export default function Navbar() {
                     </Link>
                   </li>
 
-                  {/* <li>
-                    <Link to="/helpcenter" className="sub-menu-item">
+                  <li>
+                    <Link to="/aboutus" className="sub-menu-item">
                       Struktur Organisasi
                     </Link>
-                  </li> */}
+                  </li>
 
                   <li>
                     <Link to="/visimisi" className="sub-menu-item">
@@ -199,7 +199,7 @@ export default function Navbar() {
                 <ul className="submenu open">
                   <li>
                     <Link to="/newsinh" className="sub-menu-item">
-                      News INH
+                      Berita
                     </Link>
                   </li>
 

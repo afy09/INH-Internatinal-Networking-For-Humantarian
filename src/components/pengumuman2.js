@@ -16,7 +16,7 @@ export default function Pengumuman() {
         </div>
       </div>
 
-      <div className="ms-0 md:ms-5 mt-4 md:mt-0">
+      <div className="ms-4 mt-8 md:mt-0">
         <div className="grid grid-cols-1 pb-3 text-center">
           <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">Pengumuman</h3>
         </div>
