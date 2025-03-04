@@ -34,13 +34,14 @@ export default function Index() {
   return (
     <>
       <Navbar />
-      <section className="relative overflow-hidden pt-48 after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-[56rem] after:h-[56rem] after:bg-gradient-to-tl after:to-amber-400/30  after:from-fuchsia-600/30 dark:after:to-amber-400/50 dark:after:from-fuchsia-600/50 after:blur-[200px] after:rounded-full after:-z-1">
-        <div className="container relative z-2">
-          <div className="grid grid-cols-1 text-center">
+      <section className="relative overflow-hidden pt-32 xl:pt-48 after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-[56rem] after:h-[56rem] after:bg-gradient-to-tl after:to-amber-400/30  after:from-fuchsia-600/30 dark:after:to-amber-400/50 dark:after:from-fuchsia-600/50 after:blur-[200px] after:rounded-full after:-z-1">
+        <div className="container relative lg:flex gap-8 z-2 mb-8">
+          <div className="grid grid-cols-1 text-center ">
             <div className="">
-              <h4 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-6xl mb-5">
-                Ayo Bersama, Jadilah
-                <br /> Bagian dari
+              <h4 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 text-center lg:text-start">
+                Ayo Bersama,
+                <br /> Jadilah Bagian dari
+                <br />
                 <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
@@ -57,7 +58,27 @@ export default function Index() {
                   repeat={Infinity}
                 />
               </h4>
-              <p className="text-slate-400 dark:text-white/60 text-lg max-w-xl mx-auto">
+
+              {/* <h4 className="hidden md:block font-bold lg:leading-normal leading-normal text-3xl lg:text-6xl mb-5">
+                Ayo Bersama, Jadilah Bagian dari
+                <br />
+                <TypeAnimation
+                  sequence={[
+                    // Same substring at the start will only be typed out once, initially
+                    "Solusi",
+                    1000, // wait 1s before replacing "Mice" with "Hamsters"
+                    "Kebaikan",
+                    1000,
+                    "Kepedulian",
+                    1000,
+                  ]}
+                  wrapper="span"
+                  speed={10}
+                  className="typewrite bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text ms-4"
+                  repeat={Infinity}
+                />
+              </h4> */}
+              <p className="text-slate-400 dark:text-white/60 text-lg max-w-xl text-center lg:text-start mb-24 ">
                 {" "}
                 Berkomitmen mengajak seluruh elemen masyarakat, lembaga, perusahaan, dan pemerintah untuk bersatu dalam meningkatkan peran sosial dalam penanggulangan krisis kemanusiaan.
               </p>
@@ -68,32 +89,32 @@ export default function Index() {
                 </Link>
               </div> */}
             </div>
-            <div className="mt-8 z-3 md:flex md:gap-3 justify-center rounded-xl ">
-              <div className="relative">
-                {/* Frame Laptop */}
-                <img src={BgLaptop} alt="Laptop Frame" className="rounded-lg" />
-                {/* Slider Area */}
-                <div className="absolute inset-0 p-8 rounded-xl">
-                  <Swiper
-                    modules={[Pagination, Autoplay]} // Tambahkan Autoplay
-                    pagination={{ clickable: true }}
-                    autoplay={{ delay: 2000, disableOnInteraction: false }} // Konfigurasi auto-slide
-                    loop={true}
-                    className="h-full w-full">
-                    {/* Slide 1 */}
-                    <SwiperSlide>
-                      <img src={Tentang} alt="Slide 1" className=" object-contain rounded-xl" />
-                    </SwiperSlide>
-                    {/* Slide 2 */}
-                    <SwiperSlide>
-                      <img src={Sukabumi} alt="Slide 2" className="object-contain rounded-xl" />
-                    </SwiperSlide>
-                    {/* Slide 3 */}
-                    <SwiperSlide>
-                      <img src={Palestina} alt="Slide 3" className=" object-contain rounded-xl" />
-                    </SwiperSlide>
-                  </Swiper>
-                </div>
+          </div>
+          <div className="mt-8 lg:mt-0  z-3 md:flex md:gap-3 justify-center rounded-xl ">
+            <div className="relative">
+              {/* Frame Laptop */}
+              <img src={BgLaptop} alt="Laptop Frame" className="rounded-lg" />
+              {/* Slider Area */}
+              <div className="absolute inset-0 p-8 rounded-xl">
+                <Swiper
+                  modules={[Pagination, Autoplay]} // Tambahkan Autoplay
+                  pagination={{ clickable: true }}
+                  autoplay={{ delay: 2000, disableOnInteraction: false }} // Konfigurasi auto-slide
+                  loop={true}
+                  className="h-full w-full">
+                  {/* Slide 1 */}
+                  <SwiperSlide>
+                    <img src={Tentang} alt="Slide 1" className=" object-contain rounded-xl" />
+                  </SwiperSlide>
+                  {/* Slide 2 */}
+                  <SwiperSlide>
+                    <img src={Sukabumi} alt="Slide 2" className="object-contain rounded-xl" />
+                  </SwiperSlide>
+                  {/* Slide 3 */}
+                  <SwiperSlide>
+                    <img src={Palestina} alt="Slide 3" className=" object-contain rounded-xl" />
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </div>
           </div>
@@ -101,14 +122,22 @@ export default function Index() {
       </section>
 
       <section className="relative md:py-24 py-16">
+        {/* CAMPAIGN KAMI */}
         <Features classlist="container relative" />
-        <AboutOne />
-        <AboutTwo />
-        <AmazingFeatures />
-        <AboutThree />
 
+        {/* TENTANG KAMI */}
+        <AboutOne />
+
+        {/* PERJALANAN KAMI */}
+        <AboutTwo />
+
+        {/* MENGAPA INH */}
+        <AmazingFeatures />
+
+        <Pengumuman />
+
+        {/* MITRA KERJA SAMA */}
         <Blogs />
-        <Pengumuman/>
       </section>
       <section className="pt-6">
         <BrandLogo />
