@@ -61,9 +61,9 @@ export default function AboutUs() {
                 <div>
                   <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30  from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 pb-6">
                     <h3 className="text-2xl font-semibold mb-4">Visi Kami</h3>
-                    <p>
-                      Menjadi lembaga kemanusiaan profesional berskala internasional yang mengedepankan sisi humanisme dalam mengemban tugas kemanusiaan demi mengembalikan stabilitas kehidupan di tengah masyarakat dunia. <br /> To become a
-                      professional humanitarian organization on an international scale that prioritizes humanism in carrying out humanitarian tasks in order to restore stability to life in the world community.
+                    <p>Menjadi lembaga kemanusiaan profesional berskala internasional yang mengedepankan sisi humanisme dalam mengemban tugas kemanusiaan demi mengembalikan stabilitas kehidupan di tengah masyarakat dunia.</p>
+                    <p className="mt-4 italic">
+                      To become a professional humanitarian organization on an international scale that prioritizes humanism in carrying out humanitarian tasks in order to restore stability to life in the world community.
                     </p>
                   </div>
                 </div>
@@ -71,14 +71,19 @@ export default function AboutUs() {
                 <div className="mt-6">
                   <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30  from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 pb-6">
                     <h3 className="text-2xl font-semibold mb-4">Misi Kami</h3>
-                    <p>
-                      Memfasilitasi setiap individu maupun kelompok yang memiliki jiwa relawan, yang ingin mendedikasikan potensinya untuk masyarakat yang membutuhkan, baik secara nasional hingga internasional. Mewujudkan harapan masyarakat
-                      yang membutuhkan untuk bisa hidup layak. Memberikan solusi efektif dan efisien dalam menanggulangi krisis kemanusiaan di dunia terutama di wilayah tertinggal, terdalam, dan terluar. Mengoptimalkan potensi kedermawanan
-                      masyarakat Indonesia dan dunia terhadap individu maupun kelompok yang hidup dalam krisis kemanusiaan dengan mengelola bantuan secara tepat dan akurat. Facilitate every individual or group who has a volunteer spirit,
-                      who wants to dedicate their potential to communities in need, both nationally and internationally. Realizing the hopes of people who need to be able to live a decent life. Providing effective and efficient solutions in
-                      overcoming humanitarian crises in the world, especially in underdeveloped, deepest and outermost regions. Optimizing the generosity potential of the people of Indonesia and the world towards individuals and groups
-                      living in humanitarian crises by managing aid in a timely and accurate manner.
-                    </p>
+                    <ul className="list-decimal ">
+                      <li>1. Memfasilitasi setiap individu maupun kelompok yang memiliki jiwa relawan, yang ingin mendedikasikan potensinya untuk masyarakat yang membutuhkan, baik secara nasional hingga internasional.</li>
+                      <li>2. Mewujudkan harapan masyarakat yang membutuhkan untuk bisa hidup layak.</li>
+                      <li>3.Memberikan solusi efektif dan efisien dalam menanggulangi krisis kemanusiaan di dunia terutama di wilayah tertinggal, terdalam, dan terluar.</li>
+                      <li>4. Mengoptimalkan potensi kedermawanan masyarakat Indonesia dan dunia terhadap individu maupun kelompok yang hidup dalam krisis kemanusiaan dengan mengelola bantuan secara tepat dan akurat.</li>
+                    </ul>
+
+                    <ul className="list-decimal mt-4 italic">
+                      <li>1. Facilitate every individual or group who has a volunteer spirit, who wants to dedicate their potential to communities in need, both nationally and internationally.</li>
+                      <li>2. Realizing the hopes of people who need to be able to live a decent life..</li>
+                      <li>3.Providing effective and efficient solutions in overcoming humanitarian crises in the world, especially in underdeveloped, deepest and outermost regions.</li>
+                      <li>4. Optimizing the generosity potential of the people of Indonesia and the world towards individuals and groups living in humanitarian crises by managing aid in a timely and accurate manner.</li>
+                    </ul>
                   </div>
                 </div>
               </div>

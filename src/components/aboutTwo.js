@@ -28,30 +28,38 @@ export default function AboutTwo() {
                 <ZoomableGroup zoom={1}>
                   <Geographies geography={geoUrl}>
                     {({ geographies }) =>
-                      geographies.map((geo) => (
-                        <Geography
-                          key={geo.rsmKey}
-                          geography={geo}
-                          fill={highlightedCountries.includes(geo.id) ? "#FFC107" : "#555"}
-                          stroke="#000"
-                          onMouseEnter={(event) => {
-                            const { clientX, clientY } = event;
-                            setTooltipContent({
-                              country: geo.properties?.name || "Unknown", // Pastikan properti `name` aman
-                              x: clientX,
-                              y: clientY,
-                            });
-                          }}
-                          onMouseLeave={() => setTooltipContent({ country: "", x: 0, y: 0 })}
-                        />
-                      ))
+                      geographies
+                        .filter((geo) => geo.properties?.name !== "Antarctica") // Menyaring Antartika
+                        .map((geo) => (
+                          <Geography
+                            key={geo.rsmKey}
+                            geography={geo}
+                            fill={highlightedCountries.includes(geo.id) ? "#FFC107" : "#555"}
+                            stroke="#000"
+                            onMouseEnter={(event) => {
+                              const { clientX, clientY } = event;
+                              setTooltipContent({
+                                country: geo.properties?.name || "Unknown",
+                                x: clientX,
+                                y: clientY,
+                              });
+                            }}
+                            onMouseLeave={() => setTooltipContent({ country: "", x: 0, y: 0 })}
+                          />
+                        ))
                     }
                   </Geographies>
                 </ZoomableGroup>
               </ComposableMap>
               {/* Tooltip */}
               {tooltipContent.country && (
-                <div className="absolute bg-white text-black px-2 py-1 rounded shadow-md" style={{ left: tooltipContent.x + 10, top: tooltipContent.y + 10 }}>
+                <div
+                  className="absolute bg-amber-400 text-white px-2 py-1 rounded shadow-md"
+                  style={{
+                    left: tooltipContent.x + 10,
+                    top: tooltipContent.y + 10,
+                    pointerEvents: "none", // Untuk memastikan tooltip tidak mengganggu hover
+                  }}>
                   {tooltipContent.country}
                 </div>
               )}

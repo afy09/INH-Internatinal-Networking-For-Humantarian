@@ -17,6 +17,7 @@ import DonasiDetails from "./pages/detailDonasi";
 import Helpcenter from "./pages/helpcenter";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
+import StrukturOrganisasi from "./pages/struktur";
 import ResetPassword from "./pages/reset-password";
 import Terms from "./pages/terms";
 import Privacy from "./pages/privacy";
@@ -41,6 +42,7 @@ function App() {
       <Route path="/fokus" element={<Fokus />} />
       <Route path="/legalitas" element={<Legalitas />} />
       <Route path="/pricing" element={<Pricing />} />
+      <Route path="/struktur-organisasi" element={<StrukturOrganisasi />} />
       <Route path="/services" element={<Services />} />
       <Route path="/daftarprogram" element={<DaftarProgram />} />
       <Route path="/donasi-detail/:id" element={<DonasiDetails />} />

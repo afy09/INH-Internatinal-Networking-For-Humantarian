@@ -4,7 +4,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Switcher from "../components/switcher";
 import Berita from "../components/berita";
-import Pengumuman from "../components/pengumuman";
+import Pengumuman from "../components/pengumuman2";
 
 export default function News() {
   return (

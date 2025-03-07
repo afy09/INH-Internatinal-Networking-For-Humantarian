@@ -151,7 +151,7 @@ export default function Navbar() {
                   </li>
 
                   <li>
-                    <Link to="/aboutus" className="sub-menu-item">
+                    <Link to="/struktur-organisasi" className="sub-menu-item">
                       Struktur Organisasi
                     </Link>
                   </li>
