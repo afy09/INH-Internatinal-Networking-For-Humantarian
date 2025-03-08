@@ -59,7 +59,7 @@ export default function AboutTwo() {
                                       fill="#FFFFFF"
                                     />
                                     {/* Teks Tooltip */}
-                                    <text x={9} y={4} textAnchor="middle" alignmentBaseline="middle" fontSize="12" fontWeight="bold" fill="black">
+                                    <text x={9} y={0} textAnchor="middle" alignmentBaseline="middle" fontSize="12" fontWeight="bold" fill="black">
                                       {tooltipContent.country}
                                     </text>
                                   </g>
