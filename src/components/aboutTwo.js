@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
 import aboutImg from "../assets/images/features/bg-journey.png";
 import { FiCheckCircle, MdKeyboardArrowRight } from "../assets/icons/vander";
+import { geoCentroid } from "d3-geo";
 
 export default function AboutTwo() {
   const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
@@ -13,8 +14,12 @@ export default function AboutTwo() {
     "887", // Yemen
     "104", // Myanmar
     "760", // Syria
+    "148", // Chad
+    "566", // Nigeria
+    "728", // South Sudan
+    "800", // Uganda
+    "404", // Kenya
   ];
-
   // State untuk menyimpan tooltip
   const [tooltipContent, setTooltipContent] = useState({ country: "", x: 0, y: 0 });
 
@@ -27,42 +32,68 @@ export default function AboutTwo() {
               <ComposableMap projectionConfig={{ scale: 200 }}>
                 <ZoomableGroup zoom={1}>
                   <Geographies geography={geoUrl}>
-                    {({ geographies }) =>
-                      geographies
-                        .filter((geo) => geo.properties?.name !== "Antarctica") // Menyaring Antartika
-                        .map((geo) => (
-                          <Geography
-                            key={geo.rsmKey}
-                            geography={geo}
-                            fill={highlightedCountries.includes(geo.id) ? "#FFC107" : "#555"}
-                            stroke="#000"
-                            onMouseEnter={(event) => {
-                              const { clientX, clientY } = event;
-                              setTooltipContent({
-                                country: geo.properties?.name || "Unknown",
-                                x: clientX,
-                                y: clientY,
-                              });
-                            }}
-                            onMouseLeave={() => setTooltipContent({ country: "", x: 0, y: 0 })}
-                          />
-                        ))
-                    }
+                    {({ geographies, projection }) => {
+                      const tooltipElements = []; // Menyimpan tooltip agar dirender terakhir
+
+                      return (
+                        <>
+                          {geographies
+                            .filter((geo) => geo.properties?.name !== "Antarctica") // Menghapus Antartika
+                            .map((geo) => {
+                              const centroid = geoCentroid(geo); // Mendapatkan koordinat tengah negara
+                              const [x, y] = projection(centroid); // Konversi ke posisi dalam SVG
+                              const isHighlighted = highlightedCountries.includes(geo.id); // Cek apakah negara termasuk dalam daftar yang ditandai
+
+                              // Jika negara termasuk dalam daftar, tambahkan tooltip ke array
+                              if (tooltipContent.country && tooltipContent.x === x && tooltipContent.y === y - 12) {
+                                tooltipElements.push(
+                                  <g key={`tooltip-${geo.rsmKey}`} transform={`translate(${tooltipContent.x}, ${tooltipContent.y})`} style={{ pointerEvents: "none", zIndex: 10 }}>
+                                    {/* Background Tooltip */}
+                                    <rect
+                                      x={-tooltipContent.country.length * 4} // Perlebar ukuran
+                                      y={-16} // Tambahkan sedikit padding ke atas
+                                      width={tooltipContent.country.length * 12}
+                                      height={30}
+                                      rx={6}
+                                      ry={6}
+                                      fill="#FFFFFF"
+                                    />
+                                    {/* Teks Tooltip */}
+                                    <text x={9} y={4} textAnchor="middle" alignmentBaseline="middle" fontSize="12" fontWeight="bold" fill="black">
+                                      {tooltipContent.country}
+                                    </text>
+                                  </g>
+                                );
+                              }
+
+                              return (
+                                <Geography
+                                  key={geo.rsmKey}
+                                  geography={geo}
+                                  fill={isHighlighted ? "#FFC107" : "#555"}
+                                  stroke="#000"
+                                  onMouseEnter={() => {
+                                    if (isHighlighted) {
+                                      setTooltipContent({
+                                        country: `${geo.properties?.name || "Unknown"}`,
+                                        x,
+                                        y: y - 12, // Sedikit naik agar tidak menutupi negara
+                                      });
+                                    }
+                                  }}
+                                  onMouseLeave={() => setTooltipContent({ country: "", x: 0, y: 0 })}
+                                />
+                              );
+                            })}
+
+                          {/* Render tooltip terakhir agar tidak tertutup oleh peta */}
+                          {tooltipElements}
+                        </>
+                      );
+                    }}
                   </Geographies>
                 </ZoomableGroup>
               </ComposableMap>
-              {/* Tooltip */}
-              {tooltipContent.country && (
-                <div
-                  className="absolute bg-amber-400 text-white px-2 py-1 rounded shadow-md"
-                  style={{
-                    left: tooltipContent.x + 10,
-                    top: tooltipContent.y + 10,
-                    pointerEvents: "none", // Untuk memastikan tooltip tidak mengganggu hover
-                  }}>
-                  {tooltipContent.country}
-                </div>
-              )}
             </div>
           </div>
 
