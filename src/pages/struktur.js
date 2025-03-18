@@ -44,7 +44,7 @@ export default function AboutUs() {
       } else if (activeTab === "Divisi Keuangan") {
         return item.jabatan.toLowerCase().includes("finance");
       } else if (activeTab === "Divisi Digital Fundraising & IT") {
-        return item.jabatan.toLowerCase().includes("fundraising") || item.jabatan.toLowerCase().includes("it");
+        return item.jabatan.toLowerCase().includes("fundraising") || item.jabatan.toLowerCase().includes("it") || item.jabatan.toLowerCase().includes("customer service") || item.jabatan.toLowerCase().includes("fundraiser");
       } else if (activeTab === "Divisi Logistik") {
         return item.jabatan.toLowerCase().includes("logistik");
       }
