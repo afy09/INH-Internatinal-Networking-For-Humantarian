@@ -48,7 +48,7 @@ export default function AboutUs() {
       <div className="relative">
         <div className="shape absolute sm:-bottom-px -bottom-[2px] start-0 end-0 overflow-hidden z-1 text-white dark:text-slate-900">
           <svg className="w-full h-auto scale-[2.0] origin-top" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="#323232"></path>
           </svg>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function AboutUs() {
             <div className="lg:w-4/5">
               <div id="StarterContent" className="mt-6">
                 <div>
-                  <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30  from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 pb-6">
+                  <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30  from-fuchsia-600/30  px-6 pt-6 pb-6">
                     <h3 className="text-2xl font-semibold mb-4">Visi Kami</h3>
                     <p>Menjadi lembaga kemanusiaan profesional berskala internasional yang mengedepankan sisi humanisme dalam mengemban tugas kemanusiaan demi mengembalikan stabilitas kehidupan di tengah masyarakat dunia.</p>
                     <p className="mt-4 italic">
@@ -69,7 +69,7 @@ export default function AboutUs() {
                 </div>
 
                 <div className="mt-6">
-                  <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30  from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 pb-6">
+                  <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30  from-fuchsia-600/30  px-6 pt-6 pb-6">
                     <h3 className="text-2xl font-semibold mb-4">Misi Kami</h3>
                     <ul className="list-decimal ">
                       <li>1. Memfasilitasi setiap individu maupun kelompok yang memiliki jiwa relawan, yang ingin mendedikasikan potensinya untuk masyarakat yang membutuhkan, baik secara nasional hingga internasional.</li>

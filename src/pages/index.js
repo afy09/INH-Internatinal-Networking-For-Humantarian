@@ -34,7 +34,7 @@ export default function Index() {
   return (
     <>
       <Navbar />
-      <section className="relative overflow-hidden pt-32 xl:pt-48 after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-[56rem] after:h-[56rem] after:bg-gradient-to-tl after:to-amber-400/30  after:from-fuchsia-600/30 dark:after:to-amber-400/50 dark:after:from-fuchsia-600/50 after:blur-[200px] after:rounded-full after:-z-1">
+      <section className="relative overflow-hidden pt-32 xl:pt-48 after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-[56rem] after:h-[56rem] after:bg-gradient-to-tl after:to-amber-400/30  after:from-fuchsia-600/30 dark:after:to-amber-400/50 dark:after:from-amber-400/50 after:blur-[200px] after:rounded-full after:-z-1">
         <div className="container relative lg:flex gap-8 z-2 mb-8">
           <div className="grid grid-cols-1 text-center ">
             <div className="">
@@ -54,7 +54,7 @@ export default function Index() {
                   ]}
                   wrapper="span"
                   speed={10}
-                  className="typewrite bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text ms-4"
+                  className="typewrite bg-gradient-to-br from-amber-400 to-amber-400 text-transparent bg-clip-text ms-4"
                   repeat={Infinity}
                 />
               </h4>
@@ -133,6 +133,9 @@ export default function Index() {
 
         {/* MENGAPA INH */}
         <AmazingFeatures />
+
+        {/* Aktivitas Terbaru */}
+        <AboutThree />
 
         <Pengumuman />
 

@@ -25,8 +25,8 @@ export default function AboutThree() {
     <>
       <div className="container relative md:mt-24 mt-16">
         <div className="">
-          <div className="relative w-full overflow-y-auto p-6 bg-white dark:bg-slate-900 rounded-md shadow dark:shadow-slate-800">
-            <h3 className="mb-4 md:text-3xl text-2xl font-semibold">Galeri Video INH</h3>
+          <div className="relative w-full overflow-y-auto p-6  border border-gray-800 rounded-md shadow dark:shadow-slate-800">
+            <h3 className="mb-4 md:text-3xl text-2xl font-semibold">Aktivitas Terbaru Kami</h3>
             <div className="md:flex gap-6">
               <div className="w-full  cursor-pointer pb-6 " onClick={() => handleVideoOpen("RJUI_OtyyxE")}>
                 <img src="https://img.youtube.com/vi/RJUI_OtyyxE/0.jpg" className="w-full rounded-lg "></img>

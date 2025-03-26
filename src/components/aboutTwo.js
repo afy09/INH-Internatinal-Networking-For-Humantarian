@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
 import aboutImg from "../assets/images/features/bg-journey.png";
 import { FiCheckCircle, MdKeyboardArrowRight } from "../assets/icons/vander";
 import { geoCentroid } from "d3-geo";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 export default function AboutTwo() {
+  const { ref, inView } = useInView({ triggerOnce: true });
+  const [startCount, setStartCount] = useState(false);
   const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
   const highlightedCountries = [
@@ -23,12 +27,18 @@ export default function AboutTwo() {
   // State untuk menyimpan tooltip
   const [tooltipContent, setTooltipContent] = useState({ country: "", x: 0, y: 0 });
 
+  useEffect(() => {
+    if (inView) {
+      setStartCount(true);
+    }
+  }, [inView]);
+
   return (
     <>
       <div className="container relative md:mt-24 mt-16">
         <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
           <div className="relative order-1 md:order-2">
-            <div className="relative overflow-hidden rounded-lg border  lg:ms-8">
+            <div className="relative overflow-hidden rounded-lg border border-gray-800  lg:ms-8">
               <ComposableMap projectionConfig={{ scale: 200 }}>
                 <ZoomableGroup zoom={1}>
                   <Geographies geography={geoUrl}>
@@ -103,18 +113,30 @@ export default function AboutTwo() {
             <ul className="list-none text-slate-400 mt-4">
               <li className="mb-2 flex items-center">
                 <FiCheckCircle className="text-amber-400 h-5 w-5 me-2" />
-                Program berjalan 20 +
+                Program berjalan{" "}
+                <span className="text-amber-400 text-lg font-semibold ms-2">
+                  <CountUp end={20} duration={20} separator="," /> +
+                </span>
               </li>
               <li className="mb-2 flex items-center">
-                <FiCheckCircle className="text-amber-400 h-5 w-5 me-2" /> Donatur 30,372
+                <FiCheckCircle className="text-amber-400 h-5 w-5 me-2" /> Donatur{" "}
+                <span className="text-amber-400 text-lg font-semibold ms-2">
+                  <CountUp end={30372} duration={10} separator="," />
+                </span>
               </li>
               <li className="mb-2 flex items-center">
                 <FiCheckCircle className="text-amber-400 h-5 w-5 me-2" />
-                Negara Kerjasama 13
+                Negara Kerjasama{" "}
+                <span className="text-amber-400 text-lg font-semibold ms-2">
+                  <CountUp end={13} duration={20} separator="," />
+                </span>
               </li>
               <li className="mb-2 flex items-center">
                 <FiCheckCircle className="text-amber-400 h-5 w-5 me-2" />
-                Penirima Manfaat 1,126,248
+                Penirima Manfaat
+                <span className="text-amber-400 text-lg font-semibold ms-2">
+                  <CountUp end={1126248} duration={10} separator="," />
+                </span>
               </li>
             </ul>
 
