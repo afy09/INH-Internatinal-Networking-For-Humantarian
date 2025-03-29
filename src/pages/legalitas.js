@@ -123,7 +123,6 @@ export default function AboutUs() {
         </div>
       </div>
       <Footer />
-      <Switcher />
     </>
   );
 }

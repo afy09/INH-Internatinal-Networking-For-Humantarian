@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import Switcher from "../components/switcher";
+import { FiCalendar } from "../assets/icons/vander";
+import { FaRegUser } from "react-icons/fa";
 
 export default function BlogDetails() {
   const { id } = useParams(); // Mendapatkan ID dari parameter URL
@@ -19,7 +19,7 @@ export default function BlogDetails() {
     // Fetch data berdasarkan ID
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://api.rekapitung.id/api/news/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/news/${id}`);
         const result = await response.json();
         if (result?.data) {
           setData(result.data); // Ambil data dari respons
@@ -58,21 +58,27 @@ export default function BlogDetails() {
           <div className="md:flex justify-center">
             <div className="lg:w-2/3 md:w-4/5">
               <Link to="" className="bg-amber-400 text-white text-[12px] font-semibold px-2.5 py-0.5 rounded h-5">
-                Berita
+                {data.kategori}
               </Link>
               <h5 className="md:text-4xl text-3xl font-bold md:tracking-normal tracking-normal md:leading-normal leading-normal mt-3">{data.title}</h5>
-              <p className="text-slate-400 text-lg mt-3">{data.deskripsi}</p>
+              <p className="text-slate-400 text-lg mt-3" dangerouslySetInnerHTML={{ __html: data?.deskripsi }}></p>
 
-              <div className="flex items-center mt-5">
-                <img src={data.image} className="h-12 w-12 rounded-full" alt={data.author} />
-
-                <div className="ms-2">
+              <div className=" items-center mt-5">
+                <div className="flex items-center gap-2">
+                  <div>
+                    <FaRegUser className="h-4 w-4 " />
+                  </div>
                   <h6>
-                    <Link to="" className="font-medium hover:text-amber-400">
-                      {data.author}
+                    <Link to="" className="font-medium hover:text-amber-400 ms-2">
+                      By: {data.author}
                     </Link>
                   </h6>
-                  <span className="text-slate-400 text-sm">{new Date(data.created_at).toLocaleDateString()} </span>
+                </div>
+                <div className="text-slate-400 text-sm flex gap-2 items-center mt-2">
+                  <div>
+                    <FiCalendar className="h-4 w-4 " />
+                  </div>
+                  <span className="ms-2">{new Date(data.created_at).toLocaleDateString()}</span>
                 </div>
               </div>
               <div className="">
@@ -84,7 +90,6 @@ export default function BlogDetails() {
       </section>
 
       <Footer />
-      <Switcher />
     </>
   );
 }

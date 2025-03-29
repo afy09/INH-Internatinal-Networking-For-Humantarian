@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import bannerImg from "../assets/images/lewatobi.png";
@@ -25,6 +25,26 @@ import "swiper/css/pagination";
 import Pengumuman from "../components/pengumuman2";
 
 export default function Index() {
+  const [imageData, setimageData] = useState([]);
+
+  // Fetch data from backend
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/pamplets`);
+        const result = await response.json();
+        console.log("Response dari API:", result);
+
+        if (Array.isArray(result)) {
+          setimageData(result);
+        }
+      } catch (error) {
+        console.error("Error fetching news data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   useEffect(() => {
     document.documentElement.setAttribute("dir", "ltr");
     document.documentElement.classList.add("dark");
@@ -58,26 +78,6 @@ export default function Index() {
                   repeat={Infinity}
                 />
               </h4>
-
-              {/* <h4 className="hidden md:block font-bold lg:leading-normal leading-normal text-3xl lg:text-6xl mb-5">
-                Ayo Bersama, Jadilah Bagian dari
-                <br />
-                <TypeAnimation
-                  sequence={[
-                    // Same substring at the start will only be typed out once, initially
-                    "Solusi",
-                    1000, // wait 1s before replacing "Mice" with "Hamsters"
-                    "Kebaikan",
-                    1000,
-                    "Kepedulian",
-                    1000,
-                  ]}
-                  wrapper="span"
-                  speed={10}
-                  className="typewrite bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text ms-4"
-                  repeat={Infinity}
-                />
-              </h4> */}
               <p className="text-slate-400 dark:text-white/60 text-lg max-w-xl text-center lg:text-start mb-24 ">
                 {" "}
                 Berkomitmen mengajak seluruh elemen masyarakat, lembaga, perusahaan, dan pemerintah untuk bersatu dalam meningkatkan peran sosial dalam penanggulangan krisis kemanusiaan.
@@ -104,15 +104,15 @@ export default function Index() {
                   className="h-full w-full">
                   {/* Slide 1 */}
                   <SwiperSlide>
-                    <img src={Tentang} alt="Slide 1" className=" object-contain rounded-xl" />
+                    <img src={imageData[0]?.image} alt="" className=" object-contain rounded-xl" />
                   </SwiperSlide>
                   {/* Slide 2 */}
                   <SwiperSlide>
-                    <img src={Sukabumi} alt="Slide 2" className="object-contain rounded-xl" />
+                    <img src={imageData[1]?.image} alt="" className="object-contain rounded-xl" />
                   </SwiperSlide>
                   {/* Slide 3 */}
                   <SwiperSlide>
-                    <img src={Palestina} alt="Slide 3" className=" object-contain rounded-xl" />
+                    <img src={imageData[2]?.image} alt="" className=" object-contain rounded-xl" />
                   </SwiperSlide>
                 </Swiper>
               </div>
@@ -138,15 +138,14 @@ export default function Index() {
         <AboutThree />
 
         <Pengumuman />
-
-        {/* MITRA KERJA SAMA */}
+        {/* BERITA */}
         <Blogs />
+        {/* MITRA KERJA SAMA */}
       </section>
       <section className="pt-6">
         <BrandLogo />
       </section>
       <Footer />
-      <Switcher />
     </>
   );
 }

@@ -28,39 +28,43 @@ import NewsInh from "./pages/newsinh";
 import Distribusi from "./pages/distribusi";
 import BrandMitra from "./pages/brandmitra";
 import DistribusiDetail from "./pages/distribusi-detail";
+import TrackingScripts from "./hooks";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/index-two" element={<IndexTwo />} />
-      <Route path="/index-three" element={<IndexThree />} />
-      <Route path="/index-light" element={<IndexLight />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/aboutus" element={<AboutUs />} />
-      <Route path="/visimisi" element={<VisiMisi />} />
-      <Route path="/fokus" element={<Fokus />} />
-      <Route path="/legalitas" element={<Legalitas />} />
-      <Route path="/pricing" element={<Pricing />} />
-      <Route path="/struktur-organisasi" element={<StrukturOrganisasi />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/daftarprogram" element={<DaftarProgram />} />
-      <Route path="/donasi-detail/:id" element={<DonasiDetails />} />
-      <Route path="/blog-detail/:id" element={<BlogDetails />} />
-      <Route path="/newsinh" element={<NewsInh />} />
-      <Route path="/distribusi" element={<Distribusi />} />
-      <Route path="/distribusi-detail/:id" element={<DistribusiDetail />} />
-      <Route path="/helpcenter" element={<Helpcenter />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/reset-password" element={<ResetPassword />} />
-      <Route path="/terms" element={<Terms />} />
-      <Route path="/privacy" element={<Privacy />} />
-      <Route path="/brandmitra" element={<BrandMitra />} />
-      <Route path="/error" element={<Error />} />
-      <Route path="*" element={<Error />} />
-      <Route path="contact" element={<Contact />} />
-    </Routes>
+    <>
+      <TrackingScripts />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/index-two" element={<IndexTwo />} />
+        <Route path="/index-three" element={<IndexThree />} />
+        <Route path="/index-light" element={<IndexLight />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/visimisi" element={<VisiMisi />} />
+        <Route path="/fokus" element={<Fokus />} />
+        <Route path="/legalitas" element={<Legalitas />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/struktur-organisasi" element={<StrukturOrganisasi />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/daftarprogram" element={<DaftarProgram />} />
+        <Route path="/donasi-detail/:id" element={<DonasiDetails />} />
+        <Route path="/blog-detail/:id" element={<BlogDetails />} />
+        <Route path="/newsinh" element={<NewsInh />} />
+        <Route path="/distribusi" element={<Distribusi />} />
+        <Route path="/distribusi-detail/:id" element={<DistribusiDetail />} />
+        <Route path="/helpcenter" element={<Helpcenter />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/brandmitra" element={<BrandMitra />} />
+        <Route path="/error" element={<Error />} />
+        <Route path="*" element={<Error />} />
+        <Route path="contact" element={<Contact />} />
+      </Routes>
+    </>
   );
 }
 

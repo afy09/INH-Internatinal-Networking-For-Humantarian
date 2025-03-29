@@ -18,7 +18,7 @@ export default function AboutUs() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://api.rekapitung.id/api/struktur");
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/struktur`);
         const result = await response.json();
         setTeamData(result.data);
       } catch (error) {
@@ -71,7 +71,7 @@ export default function AboutUs() {
           {tabs.map((tab) => (
             <button
               key={tab}
-              className={`px-6 py-2 text-sm font-medium rounded-md  transition-colors duration-300 ms-2 ${activeTab === tab ? "bg-amber-400 text-white" : "bg-gray-300 text-gray-700 dark:bg-gray-700 dark:text-gray-200"}`}
+              className={`px-6 py-2 text-sm font-medium rounded-md  transition-colors duration-300 ms-2 mt-2 ${activeTab === tab ? "bg-amber-400 text-white" : "border border-gray-800 text-white"}`}
               onClick={() => setActiveTab(tab)}>
               {tab}
             </button>
@@ -86,7 +86,7 @@ export default function AboutUs() {
           ) : (
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
               {filterTeam().map((item) => (
-                <div className="overflow-hidden relative w-full mx-auto bg-white dark:bg-slate-900 shadow hover:shadow-md dark:shadow-slate-800 rounded-md flex items-center duration-500" key={item.id}>
+                <div className="overflow-hidden relative w-full mx-auto bg-slate-900 border border-gray-800 rounded hover:shadow-md  flex items-center duration-500" key={item.id}>
                   <img src={item.gambar} alt={item.nama} className="absolute -start-10 w-40 h-40 rounded-full shadow-lg" />
                   <div className="min-w-0 py-10 ps-36 pe-6">
                     <Link to="#" className="text-lg font-medium hover:text-amber-400">
@@ -101,7 +101,6 @@ export default function AboutUs() {
         </div>
       </section>
       <Footer />
-      <Switcher />
     </>
   );
 }

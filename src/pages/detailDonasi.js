@@ -38,7 +38,7 @@ export default function DonasiDetails() {
     // Fetch data berdasarkan ID
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://api.rekapitung.id/api/campaign/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/campaign/${id}`);
         const result = await response.json();
         if (result?.data) {
           setData(result.data); // Ambil data dari respons
@@ -81,7 +81,7 @@ export default function DonasiDetails() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://api.rekapitung.id/api/payment", {
+      const response = await axios.post("${process.env.REACT_APP_API_BASE_URL}/api/payment", {
         name: formData.name,
         email: formData.email,
         amount: parseInt(formData.amount), // Pastikan amount dikirim sebagai angka
@@ -250,7 +250,6 @@ export default function DonasiDetails() {
       )}
 
       <Footer />
-      <Switcher />
     </>
   );
 }

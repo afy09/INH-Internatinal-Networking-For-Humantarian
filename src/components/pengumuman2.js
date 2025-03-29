@@ -11,7 +11,7 @@ export default function Pengumuman() {
   useEffect(() => {
     const fetchPengumuman = async () => {
       try {
-        const response = await fetch("https://api.rekapitung.id/api/pengumuman");
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/pengumuman`);
         const data = await response.json();
         setPengumuman(data.data || []);
       } catch (err) {
@@ -44,7 +44,7 @@ export default function Pengumuman() {
               <p className="text-red-500">{error}</p>
             ) : pengumuman.length > 0 ? (
               pengumuman.map((item) => (
-                <div key={item.id} className="relative bg-white dark:bg-slate-900 p-4 rounded-md shadow dark:shadow-gray-700 w-full">
+                <div key={item.id} className="relative bg-white dark:bg-slate-900 p-4 rounded-md border border-gray-800 w-full">
                   <img src={item.image} className="rounded-md shadow dark:shadow-gray-700 w-full h-64 object-cover" alt="Pengumuman" />
                 </div>
               ))

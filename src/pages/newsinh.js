@@ -24,7 +24,6 @@ export default function News() {
       </section>
 
       <Footer />
-      <Switcher />
     </>
   );
 }
