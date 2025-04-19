@@ -106,7 +106,7 @@ export default function AboutUs() {
                   </div>
                   <div className="flex justify-between italic mt-2 text-sm text-slate-100 ">
                     <p>Target Pengumpulan :</p>
-                    <p>Rp. {item?.total}</p>
+                    {new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(item?.total)}
                   </div>
                   <p className="text-slate-400 mt-4">
                     {item.deskripsi.length > 50 ? (expandedIndex === index ? item.deskripsi : `${item.deskripsi.substring(0, 50)}...`) : item.deskripsi}

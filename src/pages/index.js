@@ -31,12 +31,12 @@ export default function Index() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/pamplets`);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/banners`);
         const result = await response.json();
         console.log("Response dari API:", result);
 
-        if (Array.isArray(result)) {
-          setimageData(result);
+        if (Array.isArray(result.data)) {
+          setimageData(result.data);
         }
       } catch (error) {
         console.error("Error fetching news data:", error);
@@ -96,25 +96,22 @@ export default function Index() {
               <img src={BgLaptop} alt="Laptop Frame" className="rounded-lg" />
               {/* Slider Area */}
               <div className="absolute inset-0 p-8 rounded-xl">
-                <Swiper
-                  modules={[Pagination, Autoplay]} // Tambahkan Autoplay
-                  pagination={{ clickable: true }}
-                  autoplay={{ delay: 2000, disableOnInteraction: false }} // Konfigurasi auto-slide
-                  loop={true}
-                  className="h-full w-full">
-                  {/* Slide 1 */}
-                  <SwiperSlide>
-                    <img src={imageData[0]?.image} alt="" className=" object-contain rounded-xl" />
-                  </SwiperSlide>
-                  {/* Slide 2 */}
-                  <SwiperSlide>
-                    <img src={imageData[1]?.image} alt="" className="object-contain rounded-xl" />
-                  </SwiperSlide>
-                  {/* Slide 3 */}
-                  <SwiperSlide>
-                    <img src={imageData[2]?.image} alt="" className=" object-contain rounded-xl" />
-                  </SwiperSlide>
-                </Swiper>
+                {imageData.length > 0 && (
+                  <Swiper
+                    modules={[Pagination, Autoplay]} // Tambahkan Autoplay
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 2000, disableOnInteraction: false }} // Konfigurasi auto-slide
+                    loop={true}
+                    className="h-full w-full">
+                    {imageData.map((item, index) => (
+                      <SwiperSlide key={index}>
+                        <a href={item.link_banner} target={item.valid === "true" ? "_blank" : "_self"} rel="noopener noreferrer">
+                          <img src={item.image} alt={`slide-${index}`} className="object-contain rounded-xl" />
+                        </a>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                )}
               </div>
             </div>
           </div>

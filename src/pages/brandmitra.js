@@ -59,7 +59,7 @@ export default function BrandLogo() {
       </div>
 
       <Footer />
-      <Switcher />
+      {/* <Switcher /> */}
     </>
   );
 }
