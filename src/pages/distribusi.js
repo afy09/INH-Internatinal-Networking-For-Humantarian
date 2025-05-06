@@ -35,7 +35,7 @@ export default function Blogs() {
 
       <div className="container relative md:mt-24 mt-16">
         <div className="grid grid-cols-1 pb-6 text-center">
-          <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">Distribusi Program</h3>
+          <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold mt-10">Distribusi Program</h3>
           <p className="text-slate-400 max-w-xl mx-auto">Program distribusi kami yang terkini tentang kebaikan dan kepedulian untuk masyarakat</p>
         </div>
 

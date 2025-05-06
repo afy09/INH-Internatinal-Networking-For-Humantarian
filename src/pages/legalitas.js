@@ -47,7 +47,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="container relative md:mt-24 mt-10">
+      <div className="container relative  mt-10">
         <div className="md:flex  items-start justify-center gap-3">
           <div className="w-full mb-3 md:mb-0">
             <div>
@@ -95,7 +95,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="container relative md:mt-24 mt-10">
+      <div className="container relative md:mt-24 mt-10 ">
         <div className="md:flex  items-start justify-center gap-3">
           <div className="w-full mb-3 md:mb-0">
             <div>
@@ -122,6 +122,7 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );

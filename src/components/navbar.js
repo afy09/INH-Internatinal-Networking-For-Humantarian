@@ -174,6 +174,12 @@ export default function Navbar() {
                     </Link>
                   </li>
 
+                  <li>
+                    <Link to="/brandmitra" className="sub-menu-item">
+                      Mitra Kerja Sama
+                    </Link>
+                  </li>
+
                   {/* <li>
                     <Link to="/helpcenter" className="sub-menu-item">
                       Pencapaiaan

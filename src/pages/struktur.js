@@ -13,7 +13,8 @@ export default function AboutUs() {
 
   const [teamData, setTeamData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState("Dewan & Direksi");
+  const [divisions, setDivisions] = useState([]);
+  const [activeTab, setActiveTab] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,25 +32,25 @@ export default function AboutUs() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const fetchDivisions = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/division`);
+        const result = await response.json();
+        setDivisions(result);
+        if (result.length > 0) setActiveTab(result[0].id); // set default tab
+      } catch (error) {
+        console.error("Error fetching divisions:", error);
+      }
+    };
+
+    fetchDivisions();
+  }, []);
+
   const tabs = ["Dewan & Direksi", "Divisi Program", "Divisi Media Center", "Divisi Keuangan", "Divisi Digital Fundraising & IT", "Divisi Logistik"];
 
   const filterTeam = () => {
-    return teamData.filter((item) => {
-      if (activeTab === "Dewan & Direksi") {
-        return ["Dewan Pembina", "Dewan Pengawas", "Founder", "Presiden Direktur", "Sekretaris"].includes(item.jabatan);
-      } else if (activeTab === "Divisi Program") {
-        return ["Manager Program", "Staff Program"].includes(item.jabatan);
-      } else if (activeTab === "Divisi Media Center") {
-        return item.jabatan.toLowerCase().includes("media");
-      } else if (activeTab === "Divisi Keuangan") {
-        return item.jabatan.toLowerCase().includes("finance");
-      } else if (activeTab === "Divisi Digital Fundraising & IT") {
-        return item.jabatan.toLowerCase().includes("fundraising") || item.jabatan.toLowerCase().includes("it") || item.jabatan.toLowerCase().includes("customer service") || item.jabatan.toLowerCase().includes("fundraiser");
-      } else if (activeTab === "Divisi Logistik") {
-        return item.jabatan.toLowerCase().includes("logistik");
-      }
-      return false;
-    });
+    return teamData.filter((item) => item.divisi?.id === activeTab);
   };
 
   return (
@@ -62,25 +63,37 @@ export default function AboutUs() {
             <div>
               <h5 className="md:text-4xl text-3xl md:leading-normal leading-normal tracking-wider font-semibold text-white mb-0">Struktur Organisasi</h5>
             </div>
+
+            <ul className="tracking-[0.5px] mb-0 inline-block mt-5">
+              <li className="inline-block capitalize text-[15px] font-medium duration-500 ease-in-out text-white/50 hover:text-white">
+                <Link to="/">INH</Link>
+              </li>
+              <li className="inline-block text-base text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
+                <i className="mdi mdi-chevron-right"></i>
+              </li>
+              <li className="inline-block capitalize text-[15px] font-medium duration-500 ease-in-out text-white" aria-current="page">
+                Struktur Organisasi
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
       <div className="container mt-10 text-center">
         <div className="flex flex-wrap justify-center gap-2">
-          {tabs.map((tab) => (
+          {divisions.map((div) => (
             <button
-              key={tab}
-              className={`px-6 py-2 text-sm font-medium rounded-md  transition-colors duration-300 ms-2 mt-2 ${activeTab === tab ? "bg-amber-400 text-white" : "border border-gray-800 text-white"}`}
-              onClick={() => setActiveTab(tab)}>
-              {tab}
+              key={div.id}
+              className={`px-6 py-2 text-sm font-medium rounded-md  transition-colors duration-300 ms-2 mt-2 ${activeTab === div.id ? "bg-amber-400 text-white" : "border border-gray-800 text-white"}`}
+              onClick={() => setActiveTab(div.id)}>
+              {div.divisi}
             </button>
           ))}
         </div>
       </div>
 
-      <section className="relative md:py-4 py-16">
-        <div className="container relative md:mt-5 mt-10">
+      <section className="relative  py-10">
+        <div className="container relative ">
           {loading ? (
             <p className="text-center text-white">Loading...</p>
           ) : (

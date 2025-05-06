@@ -19,7 +19,7 @@ export default function AboutUs() {
   return (
     <>
       <Navbar />
-      <section className="relative md:py-44 py-20 bg-[url('../../assets/images/bg/bg-pages.jpg')] bg-no-repeat bg-bottom bg-cover">
+      <section className="relative md:py-44 py-32 bg-[url('../../assets/images/bg/bg-pages.jpg')] bg-no-repeat bg-bottom bg-cover">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-slate-900/70"></div>
         <div className="container relative">
           <div className="grid grid-cols-1 text-center mt-6">
@@ -49,8 +49,8 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <section className="relative md:py-24 py-16">
-        <div className="container relative md:mt-24 mt-16">
+      <section className="relative  py-16">
+        <div className="container relative ">
           <div className="lg:flex justify-center">
             <div className="lg:w-4/5">
               <div id="StarterContent" className="mt-6">

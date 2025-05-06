@@ -53,8 +53,8 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <section className="relative md:py-24 py-16">
-        <div className="container relative md:mt-24 ">
+      <section className="relative py-16 ">
+        <div className="container relative -mt-10 ">
           <div className="lg:flex justify-center">
             <div className="lg:w-4/5">
               <div id="StarterContent" className="mt-6">

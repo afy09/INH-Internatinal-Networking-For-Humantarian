@@ -61,9 +61,7 @@ export default function BlogDetails() {
                 {data.kategori}
               </Link>
               <h5 className="md:text-4xl text-3xl font-bold md:tracking-normal tracking-normal md:leading-normal leading-normal mt-3">{data.title}</h5>
-              <p className="text-slate-400 text-lg mt-3" dangerouslySetInnerHTML={{ __html: data?.deskripsi }}></p>
-
-              <div className=" items-center mt-5">
+              <div className=" items-center mt-2">
                 <div className="flex items-center gap-2">
                   <div>
                     <FaRegUser className="h-4 w-4 " />
@@ -82,8 +80,10 @@ export default function BlogDetails() {
                 </div>
               </div>
               <div className="">
-                <img src={data.image} className="rounded-md shadow dark:shadow-gray-700 mt-10" alt={data.title} />
+                <img src={data.image} className="rounded-md shadow dark:shadow-gray-700 mt-5" alt={data.title} />
               </div>
+
+              <p className="text-slate-400 text-lg mt-3 mb-8" dangerouslySetInnerHTML={{ __html: data?.deskripsi }}></p>
             </div>
           </div>
         </div>
