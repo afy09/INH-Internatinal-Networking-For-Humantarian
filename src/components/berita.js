@@ -11,7 +11,7 @@ export default function Blogs() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/news`);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/news?limit=9`);
         const result = await response.json();
         if (result.data) {
           setNewsData(result.data);
@@ -44,7 +44,7 @@ export default function Blogs() {
                 <div className="flex justify-between items-center">
                   <div className="flex justify-start">
                     <div to="" className="bg-amber-400/10 text-amber-500 dark:text-amber-400 text-[12px] font-semibold px-2 rounded ">
-                      {item.kategori}
+                      {item.category?.nama}
                     </div>
                   </div>
 
@@ -63,7 +63,7 @@ export default function Blogs() {
                 <div className="mt-5 flex justify-between items-center">
                   <span className="flex items-center">
                     <FaRegUser className="h-4 w-4 text-slate-400" />
-                    <span className="ms-1 text-slate-400">{item.author}</span>
+                    <span className="ms-1 text-slate-400">{item.user?.name}</span>
                   </span>
                 </div>
               </div>
