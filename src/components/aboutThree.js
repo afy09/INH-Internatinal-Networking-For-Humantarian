@@ -23,9 +23,10 @@ export default function AboutThree() {
         const videoData = await Promise.all(
           result.map(async (item) => {
             const videoId = extractVideoID(item.url);
-            return { id: item.id, videoId };
+            return { id: item.id, videoId, nama: item.nama };
           })
         );
+
         setVideos(videoData);
       } catch (error) {
         console.error("Error fetching video data:", error);
@@ -48,24 +49,33 @@ export default function AboutThree() {
             <h3 className="mb-4 md:text-3xl text-2xl font-semibold">Aktivitas Terbaru Kami</h3>
             <div className="md:flex gap-6">
               <div className="w-full">
-                <div className="w-full">
+                <div className="relative w-full">
                   <a href={`https://www.youtube.com/watch?v=${videos[0]?.videoId}`} target="_blank" rel="noopener noreferrer">
                     <img src={`https://img.youtube.com/vi/${videos[0]?.videoId}/0.jpg`} className="w-full rounded-lg" alt={videos[0]?.title} />
+                    {/* <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="p-2 md:p-5 bg-amber-400 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 fill-amber-400" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div> */}
                   </a>
                 </div>
+
                 {/* <div className="w-full cursor-pointer pb-6" onClick={() => handleVideoOpen(videos[0]?.videoId)}>
                   <img src={`https://img.youtube.com/vi/${videos[1]?.videoId}/0.jpg`} className="w-full rounded-lg" alt={videos[1]?.title} />
                 </div> */}
               </div>
-              <ul className="space-y-4 mt-4">
-                {videos.slice(1, 3).map((video) => (
-                  <li key={video.id} className="flex items-center">
-                    <a href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noopener noreferrer">
-                      <img src={`https://img.youtube.com/vi/${video.videoId}/0.jpg`} alt={`Video ${video.id}`} className="w-60 h-30 rounded-md shadow-md mr-4" />
+              <div className="space-y-4 mt-4">
+                {videos.slice(1, 8).map((video) => (
+                  <div key={video.id} className="flex items-center gap-4">
+                    <a href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noopener noreferrer" className="shrink-0">
+                      <img src={`https://img.youtube.com/vi/${video.videoId}/0.jpg`} alt={`Video ${video.id}`} className="w-30 h-16 object-cover rounded-md shadow-md" />
                     </a>
-                  </li>
+                    <p className="text-white text-sm leading-snug ms-4">{video.nama}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>

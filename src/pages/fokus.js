@@ -19,7 +19,7 @@ export default function AboutUs() {
   return (
     <>
       <Navbar />
-      <section className="relative md:py-44 py-32 bg-[url('../../assets/images/bg/bg-pages.jpg')] bg-no-repeat bg-bottom bg-cover">
+      {/* <section className="relative md:py-44 py-32 bg-[url('../../assets/images/bg/bg-pages.jpg')] bg-no-repeat bg-bottom bg-cover">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-slate-900/70"></div>
         <div className="container relative">
           <div className="grid grid-cols-1 text-center mt-6">
@@ -47,9 +47,16 @@ export default function AboutUs() {
             <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="#323232"></path>
           </svg>
         </div>
+      </div> */}
+
+      <div className="grid grid-cols-1 text-center mt-20">
+        <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
+          <br /> Fokus
+          <span className="bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text"> Utama</span>
+        </h3>
       </div>
 
-      <section className="relative  py-16">
+      <section className="relative  md:py-16 py-10">
         <div className="container relative ">
           <div className="lg:flex justify-center">
             <div className="lg:w-4/5">

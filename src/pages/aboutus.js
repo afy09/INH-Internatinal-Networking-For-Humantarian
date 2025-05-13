@@ -21,28 +21,12 @@ export default function AboutUs() {
   return (
     <>
       <Navbar />
-      <section className="relative md:py-44 py-32 bg-[url('../../assets/images/bg/bg-pages.jpg')] bg-no-repeat bg-bottom bg-cover">
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-slate-900/70"></div>
-        <div className="container relative">
-          <div className="grid grid-cols-1 text-center mt-6">
-            <div>
-              <h5 className="md:text-4xl text-3xl md:leading-normal leading-normal tracking-wider font-semibold text-white mb-0">Latar Belakang</h5>
-            </div>
-
-            <ul className="tracking-[0.5px] mb-0 inline-block mt-5">
-              <li className="inline-block capitalize text-[15px] font-medium duration-500 ease-in-out text-white/50 hover:text-white">
-                <Link to="/">INH</Link>
-              </li>
-              <li className="inline-block text-base text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
-                <i className="mdi mdi-chevron-right"></i>
-              </li>
-              <li className="inline-block capitalize text-[15px] font-medium duration-500 ease-in-out text-white" aria-current="page">
-                Latar Belakang
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <div className="grid grid-cols-1 text-center mt-20">
+        <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
+          <br /> Latar
+          <span className="bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text"> Belakang</span>
+        </h3>
+      </div>
       <div className="relative">
         <div className="shape absolute sm:-bottom-px -bottom-[2px] start-0 end-0 overflow-hidden z-1 text-white dark:text-slate-900">
           <svg className="w-full h-auto scale-[2.0] origin-top" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +35,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <section className="relative md:py-24 py-16">
+      <section className="relative md:py-16 py-10">
         <div className="container relative">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative overflow-hidden after:content-[''] after:absolute after:inset-0 after:m-auto after:w-96 after:h-96 after:bg-gradient-to-tl after:to-amber-400 after:from-fuchsia-600 after:blur-[80px] after:rounded-full p-6 bg-white dark:bg-slate-900 rounded-md shadow dark:shadow-slate-800 lg:me-6">
