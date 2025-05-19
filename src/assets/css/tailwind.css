@@ -4109,6 +4109,12 @@ h6,
   .lg\:text-start {
     text-align: start !important;
   }
+
+  .lg\:text-2xl {
+    font-size: 25px !important;
+    line-height: 1 !important;
+  }
+
   .lg\:text-5xl {
     font-size: 3rem !important;
     line-height: 1 !important;

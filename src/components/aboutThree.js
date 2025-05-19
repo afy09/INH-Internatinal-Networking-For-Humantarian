@@ -48,7 +48,7 @@ export default function AboutThree() {
           <div className="relative w-full overflow-y-auto p-6 border border-gray-800 rounded-md shadow dark:shadow-slate-800">
             <h3 className="mb-4 md:text-3xl text-2xl font-semibold">Aktivitas Terbaru Kami</h3>
             <div className="md:flex gap-6">
-              <div className="w-full">
+              <div className="w-full ">
                 <div className="relative w-full">
                   <a href={`https://www.youtube.com/watch?v=${videos[0]?.videoId}`} target="_blank" rel="noopener noreferrer">
                     <img src={`https://img.youtube.com/vi/${videos[0]?.videoId}/0.jpg`} className="w-full rounded-lg" alt={videos[0]?.title} />
@@ -61,18 +61,19 @@ export default function AboutThree() {
                     </div> */}
                   </a>
                 </div>
+                <h1 className="mt-2 text-base lg:text-2xl  hover:text-amber-400 ">{videos[0]?.nama}</h1>
 
                 {/* <div className="w-full cursor-pointer pb-6" onClick={() => handleVideoOpen(videos[0]?.videoId)}>
                   <img src={`https://img.youtube.com/vi/${videos[1]?.videoId}/0.jpg`} className="w-full rounded-lg" alt={videos[1]?.title} />
                 </div> */}
               </div>
-              <div className="space-y-4 mt-4">
+              <div className="w-full space-y-4 mt-4">
                 {videos.slice(1, 8).map((video) => (
                   <div key={video.id} className="flex items-center gap-4">
                     <a href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noopener noreferrer" className="shrink-0">
                       <img src={`https://img.youtube.com/vi/${video.videoId}/0.jpg`} alt={`Video ${video.id}`} className="w-30 h-16 object-cover rounded-md shadow-md" />
                     </a>
-                    <p className="text-white text-sm leading-snug ms-4">{video.nama}</p>
+                    <p className="text-white text-sm leading-snug ms-4 hover:text-amber-400">{video.nama}</p>
                   </div>
                 ))}
               </div>
