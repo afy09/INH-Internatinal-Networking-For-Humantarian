@@ -53,14 +53,14 @@ export default function BlogDetails() {
   return (
     <>
       <Navbar />
-      <section className="relative md:pt-44 pt-36 bg-gradient-to-b from-amber-400/20 dark:from-amber-400/40 to-transparent">
+      <section className="relative md:pt-44 pt-36 bg-white">
         <div className="container relative">
           <div className="md:flex justify-center">
             <div className="lg:w-2/3 md:w-4/5">
               <Link to="" className="bg-amber-400 text-white text-[12px] font-semibold px-2.5 py-0.5 rounded h-5">
                 {data.category?.nama}
               </Link>
-              <h5 className="md:text-4xl text-3xl font-bold md:tracking-normal tracking-normal md:leading-normal leading-normal mt-3">{data.title}</h5>
+              <div className="md:text-4xl text-3xl font-bold md:tracking-normal tracking-normal md:leading-normal leading-normal mt-3 text-slate-900">{data.title}</div>
               <div className=" flex items-center mt-2">
                 <div className="flex items-center gap-2 text-slate-400">
                   <div>
@@ -88,8 +88,6 @@ export default function BlogDetails() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
