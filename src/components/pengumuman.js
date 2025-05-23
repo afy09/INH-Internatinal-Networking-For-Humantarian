@@ -6,7 +6,7 @@ export default function Pengumuman() {
   useEffect(() => {
     const fetchAnnouncement = async () => {
       try {
-        const response = await fetch("${process.env.REACT_APP_API_BASE_URL}/api/pengumuman");
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/pengumuman`);
         const result = await response.json();
 
         if (response && result) {

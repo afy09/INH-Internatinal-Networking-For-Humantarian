@@ -5,7 +5,11 @@ export default function Features({ classlist }) {
   const [featuresData, setFeaturesData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedTitleIndex, setExpandedTitleIndex] = useState(null);
 
+  const toggleTitle = (index) => {
+    setExpandedTitleIndex(expandedTitleIndex === index ? null : index);
+  };
   const toggleDescription = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
@@ -52,7 +56,10 @@ export default function Features({ classlist }) {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <h3 className="text-xl font-semibold cursor-pointer text-white" onClick={() => toggleTitle(index)} title={item.title}>
+                    {item.title.length > 25 ? (expandedTitleIndex === index ? item.title : `${item.title.substring(0, 25)}...`) : item.title}
+                  </h3>
+
                   <div className="flex justify-start">
                     <div className="bg-amber-400 text-white text-[10px] font-semibold px-2  rounded mt-2">{item.kategori}</div>
                   </div>
@@ -71,7 +78,7 @@ export default function Features({ classlist }) {
                   </p>
                 </div>
 
-                <div className="mt-8 mb-4 flex justify-center">
+                <div className="mt-6 mb-6 flex justify-center">
                   <Link to={item?.link} target="_blank">
                     <button className="text-lg font-semibold border px-6 py-2 rounded-xl text-white hover:bg-amber-400">Donasi Sekarang</button>
                   </Link>
