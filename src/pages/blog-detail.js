@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
 import { FiCalendar } from "../assets/icons/vander";
 import { FaRegUser } from "react-icons/fa";
 import NavbarBerita from "../components/navbarberita";

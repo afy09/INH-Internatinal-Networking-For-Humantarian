@@ -1014,11 +1014,17 @@ video {
 .h-28 {
   height: 7rem !important;
 }
+.h-32 {
+  height: 9rem !important;
+}
 .h-4 {
   height: 1rem !important;
 }
 .h-40 {
   height: 10rem !important;
+}
+.h-44 {
+  height: 12rem !important;
 }
 .h-5 {
   height: 1.25rem !important;

@@ -39,7 +39,7 @@ export default function Blogs() {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
           {newsData.slice(0, 3).map((item) => (
             <div className="relative bg-white dark:bg-slate-900 p-4 border border-gray-800 rounded-md" key={item.id}>
-              <img src={item.image} className="rounded-md shadow dark:shadow-gray-700 " alt={item.title} />
+              <img src={item.image} className="rounded-md shadow dark:shadow-gray-700 h-44 w-full" alt={item.title} />
               <div className="pt-4">
                 <div className="flex justify-between items-center">
                   <div className="flex justify-start">
@@ -61,7 +61,7 @@ export default function Blogs() {
                       .replace(/\s+/g, "-")
                       .replace(/[^\w\-]+/g, "")}`}
                     className="text-lg font-semibold hover:text-amber-400">
-                    {item.title}
+                    {item.title.length > 60 ? item.title.slice(0, 60) + "..." : item.title}
                   </Link>
                 </div>
 
