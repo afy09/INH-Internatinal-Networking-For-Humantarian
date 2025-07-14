@@ -195,7 +195,7 @@ export default function NavbarBerita() {
               </li>
               <li>
                 <Link to="/daftarprogram" className="sub-menu-item">
-                  Daftar Program
+                  Program Kemanusiaan
                 </Link>
               </li>
 
@@ -219,7 +219,7 @@ export default function NavbarBerita() {
 
               <li>
                 <Link to="/contact" className="sub-menu-item">
-                  Hubungi Kami
+                  Kontak
                 </Link>
               </li>
             </ul>

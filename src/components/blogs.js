@@ -26,6 +26,14 @@ export default function Blogs() {
     fetchData();
   }, []);
 
+  const truncateHTML = (html, maxLength) => {
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = html;
+    const text = tempElement.textContent || tempElement.innerText || "";
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + "...";
+  };
+
   return (
     <div className="container relative md:mt-24 mt-16">
       <div className="grid grid-cols-1 pb-6 text-center">
@@ -64,6 +72,12 @@ export default function Blogs() {
                     {item.title.length > 60 ? item.title.slice(0, 60) + "..." : item.title}
                   </Link>
                 </div>
+
+                <p
+                  className="text-gray-400 text-sm mt-2 mb-2"
+                  dangerouslySetInnerHTML={{
+                    __html: truncateHTML(item?.deskripsi || "", 120),
+                  }}></p>
 
                 <div className="mt-5 flex justify-between items-center">
                   <span className="flex items-center">

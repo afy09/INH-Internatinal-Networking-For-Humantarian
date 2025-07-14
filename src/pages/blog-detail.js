@@ -9,7 +9,17 @@ export default function BlogDetails() {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [allNews, setAllNews] = useState([]);
+  const [allCampaign, setAllCampaign] = useState([]);
+  const [allActivate, setAllActivate] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const truncateHTML = (html, maxLength) => {
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = html;
+    const text = tempElement.textContent || tempElement.innerText || "";
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + "...";
+  };
 
   useEffect(() => {
     document.documentElement.setAttribute("dir", "ltr");
@@ -40,8 +50,42 @@ export default function BlogDetails() {
       }
     };
 
+    const fetchAllCampaign = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/campaign`);
+        const result = await response.json();
+        if (result.data) {
+          setAllCampaign(result.data);
+        }
+      } catch (error) {
+        console.error("Error fetching all news:", error);
+      }
+    };
+
+    const fetchAllActivate = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/aktivitas-terbaru`);
+        const result = await response.json();
+
+        if (result) {
+          // Ekstrak videoId dari URL
+          const dataWithVideoId = result.map((item) => {
+            const url = new URL(item.url);
+            const videoId = url.searchParams.get("v"); // ambil 'v' dari query string
+            return { ...item, videoId };
+          });
+
+          setAllActivate(dataWithVideoId);
+        }
+      } catch (error) {
+        console.error("Error fetching all news:", error);
+      }
+    };
+
     fetchData();
     fetchAllNews();
+    fetchAllCampaign();
+    fetchAllActivate();
   }, [id]);
 
   if (loading) {
@@ -99,10 +143,11 @@ export default function BlogDetails() {
             <p className="text-gray-700 text-lg mt-3 mb-8" dangerouslySetInnerHTML={{ __html: data?.deskripsi }}></p>
           </div>
 
-          {/* BERITA LAINNYA */}
+          {/* BERITA, CAMPAIGN, ACTIVATE */}
           <aside className="lg:w-1/3 mt-10 md:mt-0">
             <h4 className="font-semibold text-lg text-slate-900 border-b pb-2 mb-4">Berita Lainnya</h4>
-            <div className="space-y-4">
+            {/* BERITA */}
+            <div className="space-y-4 w-full">
               {allNews.slice(0, 5).map((news) => (
                 <Link
                   to={`/news/${news?.id}/${news?.title
@@ -110,14 +155,63 @@ export default function BlogDetails() {
                     .replace(/\s+/g, "-")
                     .replace(/[^\w\-]+/g, "")}`}
                   key={news.id}
-                  className="">
-                  <img src={news.image} alt={news.title} className="w-20 h-20 object-cover rounded" />
-                  <div className="mt-3 mb-6">
-                    <h5 className="font-semibold text-slate-900 leading-tight">{news.title}</h5>
-                    <span className="text-xs text-slate-900">{new Date(news.created_at).toLocaleDateString()}</span>
+                  className="w-full">
+                  <div className="flex   w-full mt-4">
+                    <img src={news.image} alt={news.title} className="w-full h-24   rounded" />
+                    <div className="w-full ms-3">
+                      <p className=" text-slate-900 leading-tight text-sm"> {news.title.length > 20 ? news.title.slice(0, 20) + "..." : news.title}</p>
+                      <p
+                        className="text-gray-400 text-sm mt-1 mb-2"
+                        dangerouslySetInnerHTML={{
+                          __html: truncateHTML(news?.deskripsi || "", 30),
+                        }}></p>
+                      <p className="text-slate-900 text-xs mt-1 mb-2">{new Date(news.created_at).toLocaleDateString()}</p>
+                    </div>
                   </div>
                 </Link>
               ))}
+            </div>
+
+            {/* CAMPAIGN */}
+            <div className="mt-10">
+              <h4 className="font-semibold text-lg text-slate-900 border-b pb-2 mb-4">Campaign</h4>
+              <div className="space-y-4 w-full">
+                {allCampaign.slice(0, 5).map((news) => (
+                  <Link to={news?.link} key={news.id} className="w-full">
+                    <div className="flex   w-full mt-4">
+                      <img src={news.image} alt={news.title} className="w-full h-24   rounded" />
+                      <div className="w-full ms-3">
+                        <p className=" text-slate-900 leading-tight text-sm"> {news.title.length > 20 ? news.title.slice(0, 20) + "..." : news.title}</p>
+                        <p
+                          className="text-gray-400 text-sm mt-1 mb-2"
+                          dangerouslySetInnerHTML={{
+                            __html: truncateHTML(news?.deskripsi || "", 30),
+                          }}></p>
+                        <p className="text-slate-900 text-xs mt-1 mb-2">{new Date(news.created_at).toLocaleDateString()}</p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* ACTIVATE */}
+            <div className="mt-10 mb-8">
+              <h4 className="font-semibold text-lg text-slate-900 border-b pb-2 mb-4">Aktivitas Terbaru</h4>
+              <div className="space-y-4 w-full">
+                {allActivate.slice(0, 5).map((news) => (
+                  <Link to={news?.url} key={news.id} className="w-full">
+                    <div className="flex   w-full mt-4">
+                      <img src={`https://img.youtube.com/vi/${news.videoId}/0.jpg`} alt={news.nama} className="w-full h-28   rounded" />
+                      <div className="w-full ms-3">
+                        <p className=" text-slate-900 leading-tight text-sm"> {news.nama.length > 100 ? news.nama.slice(0, 100) + "..." : news.nama}</p>
+
+                        <p className="text-slate-900 text-xs mt-1 mb-2">{new Date(news.created_at).toLocaleDateString()}</p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </aside>
         </div>

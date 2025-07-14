@@ -57,8 +57,8 @@ export default function AboutUs() {
       <div className="container relative md:mt-24 mt-16">
         <div className="grid grid-cols-1 pb-6 text-center ">
           <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-            <br /> Daftar
-            <span className="bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text"> Program</span>
+            <br /> Program
+            <span className="bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text"> Kemanusiaan</span>
           </h3>
 
           <p className="text-slate-400 max-w-xl mx-auto">Beberapa project campaign yang kita kerjakan</p>
