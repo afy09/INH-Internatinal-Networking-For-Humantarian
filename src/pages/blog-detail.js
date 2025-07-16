@@ -140,12 +140,12 @@ export default function BlogDetails() {
                 <span className="ms-2">{new Date(data.created_at).toLocaleDateString()}</span>
               </div>
 
-              <div className="flex items-center gap-2 text-slate-400">
+              {/* <div className="flex items-center gap-2 text-slate-400">
                 <FaShareAlt />
                 <a href={`https://wa.me/?text=${encodeURIComponent(data.title + " - " + shareUrl)}`} target="_blank" rel="noopener noreferrer" className="">
                   Share
                 </a>
-              </div>
+              </div> */}
 
               <div onClick={handleCopy} className="flex items-center gap-2 text-slate-400 cursor-pointer">
                 <FaCopy />
