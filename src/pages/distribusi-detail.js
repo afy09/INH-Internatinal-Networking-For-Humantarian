@@ -64,14 +64,14 @@ export default function BlogDetails() {
 
     const fetchAllActivate = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/aktivitas-terbaru`);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/aktivitas-terbaru?per_page=5`);
         const result = await response.json();
+        const items = result.data; // <--- ambil arraynya di `data`
 
-        if (result) {
-          // Ekstrak videoId dari URL
-          const dataWithVideoId = result.map((item) => {
+        if (items) {
+          const dataWithVideoId = items.map((item) => {
             const url = new URL(item.url);
-            const videoId = url.searchParams.get("v"); // ambil 'v' dari query string
+            const videoId = url.searchParams.get("v");
             return { ...item, videoId };
           });
 

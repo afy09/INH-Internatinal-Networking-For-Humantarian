@@ -18,10 +18,13 @@ export default function AboutThree() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/aktivitas-terbaru`);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/aktivitas-terbaru?per_page=7`);
         const result = await response.json();
+
+        const items = result.data;
+
         const videoData = await Promise.all(
-          result.map(async (item) => {
+          items.map(async (item) => {
             const videoId = extractVideoID(item.url);
             return { id: item.id, videoId, nama: item.nama };
           })

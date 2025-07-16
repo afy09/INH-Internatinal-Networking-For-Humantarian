@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FiCalendar } from "../assets/icons/vander";
-import { FaRegUser } from "react-icons/fa";
+import { FaCopy, FaRegUser, FaShareAlt } from "react-icons/fa";
 import NavbarBerita from "../components/navbarberita";
-import { Helmet } from "react-helmet";
 
 export default function BlogDetails() {
   const { id } = useParams();
@@ -12,6 +11,19 @@ export default function BlogDetails() {
   const [allCampaign, setAllCampaign] = useState([]);
   const [allActivate, setAllActivate] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [copied, setCopied] = useState(false);
+  const slugTitle = data?.title
+    ?.toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-]+/g, "");
+  const shareUrl = `${process.env.REACT_APP_API_BASE_URL}/share/news/${id}/${slugTitle}`;
+  const handleCopy = () => {
+    navigator.clipboard.writeText(`${data.title} - ${shareUrl}`);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000); // kembali ke normal setelah 1 detik
+  };
 
   const truncateHTML = (html, maxLength) => {
     const tempElement = document.createElement("div");
@@ -64,14 +76,14 @@ export default function BlogDetails() {
 
     const fetchAllActivate = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/aktivitas-terbaru`);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/aktivitas-terbaru?per_page=5`);
         const result = await response.json();
+        const items = result.data; // <--- ambil arraynya di `data`
 
-        if (result) {
-          // Ekstrak videoId dari URL
-          const dataWithVideoId = result.map((item) => {
+        if (items) {
+          const dataWithVideoId = items.map((item) => {
             const url = new URL(item.url);
-            const videoId = url.searchParams.get("v"); // ambil 'v' dari query string
+            const videoId = url.searchParams.get("v");
             return { ...item, videoId };
           });
 
@@ -106,16 +118,6 @@ export default function BlogDetails() {
 
   return (
     <>
-      <Helmet>
-        <title>{data?.title}</title>
-        <meta property="og:title" content={data?.title} />
-        <meta property="og:description" content={data?.caption || data.deskripsi?.substring(0, 150)} />
-        <meta property="og:image" content={data?.image} />
-        <meta property="og:url" content={window.location.href} />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
-
       <NavbarBerita />
       <section className="md:pt-36 pt-32 bg-white ps-4 pe-4 lg:px-20">
         <div className=" md:flex lg:gap-2">
@@ -124,8 +126,8 @@ export default function BlogDetails() {
               {data.category?.nama}
             </Link>
             <div className="text-3xl font-bold mt-3 text-slate-900">{data?.title}</div>
-            <div className="flex items-center mt-2">
-              <div className="flex items-center gap-2 text-slate-400">
+            <div className="flex gap-6 flex-wrap items-center mt-2 ">
+              <div className="flex-api items-center  text-slate-400">
                 <FaRegUser className="h-4 w-4" />
                 <h6>
                   <Link to="#" className="font-medium hover:text-amber-400 ms-2">
@@ -133,18 +135,31 @@ export default function BlogDetails() {
                   </Link>
                 </h6>
               </div>
-              <div className="text-slate-400 text-sm flex gap-2 items-center ms-4">
+              <div className="text-slate-400 text-sm flex-api  items-center ">
                 <FiCalendar className="h-4 w-4" />
                 <span className="ms-2">{new Date(data.created_at).toLocaleDateString()}</span>
               </div>
+
+              <div className="flex items-center gap-2 text-slate-400">
+                <FaShareAlt />
+                <a href={`https://wa.me/?text=${encodeURIComponent(data.title + " - " + shareUrl)}`} target="_blank" rel="noopener noreferrer" className="">
+                  Share
+                </a>
+              </div>
+
+              <div onClick={handleCopy} className="flex items-center gap-2 text-slate-400 cursor-pointer">
+                <FaCopy />
+                <span className="">{copied ? "Berhasil di-copy!" : "Salin URL"}</span>
+              </div>
             </div>
+
             <img src={data.image} className="rounded-md shadow mt-5" alt={data.title} />
             <p className="text-slate-900 mt-2 mb-2 italic">{data.caption}</p>
             <p className="text-gray-700 text-lg mt-3 mb-8" dangerouslySetInnerHTML={{ __html: data?.deskripsi }}></p>
           </div>
 
           {/* BERITA, CAMPAIGN, ACTIVATE */}
-          <aside className="lg:w-1/3 mt-10 md:mt-0">
+          <aside className="lg:w-1/3 mt-10 md:mt-0 ">
             <h4 className="font-semibold text-lg text-slate-900 border-b pb-2 mb-4">Berita Lainnya</h4>
             {/* BERITA */}
             <div className="space-y-4 w-full">

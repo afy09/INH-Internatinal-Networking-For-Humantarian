@@ -36,9 +36,9 @@ export default function AmazingFeatures() {
                 <div className="flex gap-5 items-center">
                   <i className={`${item.icon} text-4xl bg-gradient-to-tl to-amber-400 from-amber-400 text-transparent bg-clip-text`}></i>
 
-                  <Link to="" className="title h5 text-lg font-medium ms-4  hover:text-amber-400 duration-500">
+                  <div to="" className="title h5 text-lg font-medium ms-4  hover:text-amber-400 duration-500 ">
                     {item.title}
-                  </Link>
+                  </div>
                 </div>
 
                 <div className="content mt-7">
