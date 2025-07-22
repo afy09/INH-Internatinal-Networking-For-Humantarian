@@ -50,12 +50,11 @@ export default function Contact() {
                     021 - 80472777
                   </Link>
                 </div>
-
                 <div className="mt-5 flex gap-3 justify-center">
                   Whatsapp :
-                  <Link to="tel:+152534-468-854" className="hover:text-amber-400">
+                  <a href="https://wa.me/6287731111336" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400">
                     087731111336
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -72,9 +71,9 @@ export default function Contact() {
                 <h5 className="title h5 text-lg font-semibold">Email</h5>
 
                 <div className="mt-5">
-                  <Link to="office@inh.or.idinh.or.id" className="hover:text-amber-400">
-                    office@inh.or.id inh.or.id
-                  </Link>
+                  <a href="mailto:office@inh.or.id" className="hover:text-amber-400">
+                    office@inh.or.id
+                  </a>
                 </div>
               </div>
             </div>
@@ -94,7 +93,11 @@ export default function Contact() {
                 </p>
 
                 <div className="mt-5">
-                  <Link to="#" data-type="iframe" className="video-play-icon read-more lightbox hover:text-amber-400">
+                  <Link
+                    to="https://www.google.com/maps/place/INH+For+Humanity+(International+Networking+for+Humanitarian)/@-6.4034553,106.9700648,17z/data=!3m1!4b1!4m6!3m5!1s0x2e699584426474ff:0x17f6ce6b5b5ddbe2!8m2!3d-6.4034606!4d106.9726397!16s%2Fg%2F11g0lbf5fp?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
+                    data-type="iframe"
+                    target="_blank"
+                    className="video-play-icon read-more lightbox hover:text-amber-400">
                     View on Google map
                   </Link>
                 </div>
