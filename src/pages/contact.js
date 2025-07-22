@@ -71,7 +71,7 @@ export default function Contact() {
                 <h5 className="title h5 text-lg font-semibold">Email</h5>
 
                 <div className="mt-5">
-                  <a href="mailto:office@inh.or.id" className="hover:text-amber-400">
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=office@inh.or.id" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400">
                     office@inh.or.id
                   </a>
                 </div>
