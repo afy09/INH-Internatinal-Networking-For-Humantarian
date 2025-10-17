@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FiCalendar } from "../assets/icons/vander";
-import { FaCopy, FaRegUser, FaShareAlt } from "react-icons/fa";
+import { FaCopy, FaRegEye, FaRegUser, FaShareAlt } from "react-icons/fa";
 import NavbarBerita from "../components/navbarberita";
 
 export default function BlogDetails() {
@@ -94,16 +94,27 @@ export default function BlogDetails() {
       }
     };
 
+    const hitViewEndpoint = async () => {
+      try {
+        await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/news/${id}/view`, {
+          method: "POST",
+        });
+      } catch (error) {
+        console.error("Error hitting view endpoint:", error);
+      }
+    };
+
     fetchData();
     fetchAllNews();
     fetchAllCampaign();
     fetchAllActivate();
+    hitViewEndpoint();
   }, [id]);
 
   if (loading) {
     return (
-      <div className="text-center mt-20">
-        <h3>Loading...</h3>
+      <div className="flex justify-center items-center mt-20">
+        <div className="w-11 h-11 border-4  border-t border-amber-400/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
       </div>
     );
   }
@@ -150,6 +161,11 @@ export default function BlogDetails() {
               <div onClick={handleCopy} className="flex items-center gap-2 text-slate-400 cursor-pointer">
                 <FaCopy />
                 <span className="">{copied ? "Berhasil di-copy!" : "Salin URL"}</span>
+              </div>
+
+              <div className="text-slate-400 text-sm flex-api  items-center ">
+                <FaRegEye className="h-4 w-4" />
+                <span className="ms-2">Total View : {data?.views_count}</span>
               </div>
             </div>
 

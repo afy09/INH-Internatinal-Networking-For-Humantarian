@@ -17,12 +17,12 @@ import Blogs from "../components/blogs";
 import Footer from "../components/footer";
 import Switcher from "../components/switcher";
 import { TypeAnimation } from "react-type-animation";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules"; // Import Autoplay
 import "swiper/css";
 import "swiper/css/pagination";
 import Pengumuman from "../components/pengumuman2";
+import FlotillaTracker from "../components/flotaria";
 
 export default function Index() {
   const [imageData, setimageData] = useState([]);

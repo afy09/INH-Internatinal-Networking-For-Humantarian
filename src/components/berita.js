@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FiCalendar } from "../assets/icons/vander";
 import { FaRegUser } from "react-icons/fa";
 import Switcher from "./switcher";
+import NewsCardSkeleton from "./skeleton/skeletonNews";
 
 export default function Blogs() {
   const [newsData, setNewsData] = useState([]);
@@ -43,7 +44,9 @@ export default function Blogs() {
       </div>
 
       {loading ? (
-        <div className="text-center">Loading...</div>
+        <div className="">
+          <NewsCardSkeleton />
+        </div>
       ) : (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
           {newsData.slice(3).map((item) => (
@@ -58,7 +61,7 @@ export default function Blogs() {
                   </div>
 
                   <span className="flex items-center">
-                    <FiCalendar className="h-2 w-2 text-slate-400" />
+                    <FiCalendar className="h-4 w-4 text-slate-400" />
                     <span className="ms-1 text-slate-400">{new Date(item.created_at).toLocaleDateString()}</span>
                   </span>
                 </div>

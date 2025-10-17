@@ -212,7 +212,7 @@ export default function DonasiDetails() {
                       </div>
                     </div>
 
-                    <div className="mb-4">
+                    <div className="mb-8">
                       <button
                         type="submit"
                         className={`py-2 px-5 inline-block tracking-wide border align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border-amber-400 hover:border-amberbg-amber-500 text-white rounded-md w-full cursor-pointer ${

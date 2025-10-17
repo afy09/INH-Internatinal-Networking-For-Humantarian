@@ -29,6 +29,7 @@ import Distribusi from "./pages/distribusi";
 import BrandMitra from "./pages/brandmitra";
 import DistribusiDetail from "./pages/distribusi-detail";
 import TrackingScripts from "./hooks";
+import DetailCampaign from "./pages/detailCampaign";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/daftarprogram" element={<DaftarProgram />} />
         <Route path="/donasi-detail/:id" element={<DonasiDetails />} />
+        <Route path="/daftarprogram/detail/:id" element={<DetailCampaign />} />
         <Route path="/news/:id/:title" element={<BlogDetails />} />
         <Route path="/newsinh" element={<NewsInh />} />
         <Route path="/distribusi" element={<Distribusi />} />
