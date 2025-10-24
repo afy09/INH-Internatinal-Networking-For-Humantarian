@@ -163,10 +163,10 @@ export default function BlogDetails() {
                 <span className="">{copied ? "Berhasil di-copy!" : "Salin URL"}</span>
               </div>
 
-              <div className="text-slate-400 text-sm flex-api  items-center ">
+              {/* <div className="text-slate-400 text-sm flex-api  items-center ">
                 <FaRegEye className="h-4 w-4" />
                 <span className="ms-2">Total View : {data?.views_count}</span>
-              </div>
+              </div> */}
             </div>
 
             <img src={data.image} className="rounded-md shadow mt-5" alt={data.title} />
