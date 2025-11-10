@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import AboutImg from "../assets/images/bg-about.png";
-import InhVid from "../assets/images/inh-vid.png";
+// import InhVid from "../assets/images/inh-vid.png";
 import Tentang from "../assets/images/tentang.png";
 import Footer from "../components/footer";
 import Switcher from "../components/switcher";
@@ -100,7 +100,7 @@ export default function AboutUs() {
               lahir dari kesadaran bahwa mayoritas organisasi bantuan internasional, meskipun dengan niat baik, seringkali terjebak dalam jaring-jaring kepentingan politik yang kompleks. Alih-alih berdiri teguh pada prinsip kemanusiaan,
               banyak lembaga besar dunia yang, disadari atau tidak, menjadi perpanjangan tangan dari agenda politik tertentu.
             </p>
-            <img src={InhVid} alt="" className="mt-6 w-full" />
+            {/* <img src={InhVid} alt="" className="mt-6 w-full" /> */}
             <p className="text-slate-400 mt-6">
               Husein berargumen bahwa politisasi bantuan kemanusiaan ini bukan hanya menodai esensi dari misi kemanusiaan itu sendiri, tetapi juga secara langsung berkontribusi pada perpetuasi konflik. Ketika bantuan menjadi alat
               tawar-menawar politik, penderitaan rakyat Palestina semakin diperpanjang, dan prospek perdamaian semakin menjauh. INH, karenanya, diposisikan sebagai antitesis dari pendekatan yang telah gagal ini.

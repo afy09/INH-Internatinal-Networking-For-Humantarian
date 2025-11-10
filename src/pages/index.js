@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import bannerImg from "../assets/images/lewatobi.png";
 import BgLaptop from "../assets/images/bg-laptop.png";
-import Tentang from "../assets/images/lewatobi.png";
-import Palestina from "../assets/images/Palestina.jpg";
-import Sukabumi from "../assets/images/sukabumi1.jpg";
 import Navbar from "../components/navbar";
 import BrandLogo from "../components/brandLogo";
 import Features from "../components/features";

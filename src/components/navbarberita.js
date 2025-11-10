@@ -123,7 +123,7 @@ export default function NavbarBerita() {
               </Link>
             </div>
           </div>
-          <ul className="buy-button list-none mb-0">
+          {/* <ul className="buy-button list-none mb-0">
             <li className="md:inline hidden ps-1 mb-0 ">
               <Link
                 to="/daftarprogram"
@@ -131,7 +131,7 @@ export default function NavbarBerita() {
                 Donasi Sekarang
               </Link>
             </li>
-          </ul>
+          </ul> */}
           <div id="navigation" className={`${toggleMenu ? "block" : ""}`}>
             <ul className="navigation-menu">
               <li>
@@ -200,18 +200,45 @@ export default function NavbarBerita() {
               </li>
 
               <li className="has-submenu parent-parent-menu-item">
-                <Link to="/newsinh">Publikasi</Link>
+                <Link to="/newsinh">INH News</Link>
                 <span className="menu-arrow"></span>
                 <ul className="submenu open">
                   <li>
-                    <Link to="/newsinh" className="sub-menu-item">
-                      Berita
+                    <Link to="/inhnews?category=Palestina" className="sub-menu-item">
+                      Palestina
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/inhnews?category=Internasional" className="sub-menu-item">
+                      Internasional
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/inhnews?category=Nasional" className="sub-menu-item">
+                      Nasional
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li className="has-submenu parent-parent-menu-item">
+                <Link to="">Distribusi Program</Link>
+                <span className="menu-arrow"></span>
+                <ul className="submenu open">
+                  <li>
+                    <Link to="/disprog?category=Palestina" className="sub-menu-item">
+                      Palestina
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/disprog?category=Internasional" className="sub-menu-item">
+                      Internasional
                     </Link>
                   </li>
 
                   <li>
-                    <Link to="/distribusi" className="sub-menu-item">
-                      Distribusi Program
+                    <Link to="/disprog?category=Nasional" className="sub-menu-item">
+                      Nasional
                     </Link>
                   </li>
                 </ul>

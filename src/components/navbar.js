@@ -124,13 +124,13 @@ export default function Navbar() {
             </div>
           </div>
           <ul className="buy-button list-none mb-0">
-            <li className="md:inline hidden ps-1 mb-0 ">
+            {/* <li className="md:inline hidden ps-1 mb-0 ">
               <Link
                 to="/daftarprogram"
                 className="py-[6px] px-4 inline-block items-center justify-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400 hover:bg-amber-500 border border-amber-400 hover:border-amber-500 text-white font-semibold">
                 Donasi Sekarang
               </Link>
-            </li>
+            </li> */}
           </ul>
           <div id="navigation" className={`${toggleMenu ? "block" : ""}`}>
             <ul className="navigation-menu">
@@ -200,18 +200,45 @@ export default function Navbar() {
               </li>
 
               <li className="has-submenu parent-parent-menu-item">
-                <Link to="/newsinh">Publikasi</Link>
+                <Link to="/newsinh">INH News</Link>
                 <span className="menu-arrow"></span>
                 <ul className="submenu open">
                   <li>
-                    <Link to="/newsinh" className="sub-menu-item">
-                      Berita
+                    <Link to="/inhnews?category=Palestina" className="sub-menu-item">
+                      Palestina
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/inhnews?category=Internasional" className="sub-menu-item">
+                      Internasional
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/inhnews?category=Nasional" className="sub-menu-item">
+                      Nasional
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li className="has-submenu parent-parent-menu-item">
+                <Link to="">Distribusi Program</Link>
+                <span className="menu-arrow"></span>
+                <ul className="submenu open">
+                  <li>
+                    <Link to="/disprog?category=Palestina" className="sub-menu-item">
+                      Palestina
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/disprog?category=Internasional" className="sub-menu-item">
+                      Internasional
                     </Link>
                   </li>
 
                   <li>
-                    <Link to="/distribusi" className="sub-menu-item">
-                      Distribusi Program
+                    <Link to="/disprog?category=Nasional" className="sub-menu-item">
+                      Nasional
                     </Link>
                   </li>
                 </ul>

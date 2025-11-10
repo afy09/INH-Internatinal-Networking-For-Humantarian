@@ -30,6 +30,9 @@ import BrandMitra from "./pages/brandmitra";
 import DistribusiDetail from "./pages/distribusi-detail";
 import TrackingScripts from "./hooks";
 import DetailCampaign from "./pages/detailCampaign";
+import ThankYouPage from "./pages/tehankyouPage";
+import Inhnews from "./pages/inhNews/inhNewsPalestina";
+import DistribusiInh from "./pages/inhNews/distribusiInh";
 
 function App() {
   return (
@@ -51,8 +54,11 @@ function App() {
         <Route path="/daftarprogram" element={<DaftarProgram />} />
         <Route path="/donasi-detail/:id" element={<DonasiDetails />} />
         <Route path="/daftarprogram/detail/:id" element={<DetailCampaign />} />
+        <Route path="/thanks/:id" element={<ThankYouPage />} />
         <Route path="/news/:id/:title" element={<BlogDetails />} />
         <Route path="/newsinh" element={<NewsInh />} />
+        <Route path="/inhnews" element={<Inhnews />} />
+        <Route path="/disprog" element={<DistribusiInh />} />
         <Route path="/distribusi" element={<Distribusi />} />
         <Route path="/distribusi-detail/:id" element={<DistribusiDetail />} />
         <Route path="/helpcenter" element={<Helpcenter />} />

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { FaHeart, FaHome } from "react-icons/fa";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import Switcher from "../components/switcher";
-import { FaRegHeart, FaShareAlt } from "react-icons/fa";
-import DonasiList from "../components/donasi/donatur";
-
-export default function TankYouPage() {
-  const { id } = useParams(); // Mendapatkan ID dari parameter URL
+import Lottie from "lottie-react";
+import successAnim from "../assets/lottie/Succes.json";
+export default function ThankYouPage() {
+  const { id } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -29,7 +28,7 @@ export default function TankYouPage() {
           setData(result.data);
         }
       } catch (error) {
-        console.error("Error fetching blog detail:", error);
+        console.error("Error fetching campaign detail:", error);
       } finally {
         setLoading(false);
       }
@@ -39,87 +38,65 @@ export default function TankYouPage() {
   }, [id]);
 
   if (loading) {
-    return (
-      <div className="text-center mt-20">
-        <h3>Loading...</h3>
-      </div>
-    );
+    return <div className="text-center mt-40 text-gray-500 text-lg">Loading...</div>;
   }
 
   if (!data) {
-    return (
-      <div className="text-center mt-20">
-        <h3>Data not found</h3>
-      </div>
-    );
+    return <div className="text-center mt-40 text-red-500 text-lg">Data not found</div>;
   }
 
   return (
     <>
       <Navbar />
-      <section className="relative md:pt-44 pt-32 bg-gradient-to-b from-amber-400/20 dark:from-amber-400/40 to-transparent">
-        <div className="container relative">
-          <div className="md:flex justify-center">
-            <div className="lg:w-2/3 md:w-4/5">
-              {/* <Link to="" className="bg-amber-400 text-white text-[12px] font-semibold px-2.5 py-0.5 rounded h-5">
-                {data.kategori}
-              </Link> */}
+      <section className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-amber-200 via-pink-100 to-purple-200 dark:from-amber-400/20 dark:via-pink-400/10 dark:to-purple-400/20 px-4 mt-10 mb-8">
+        <div className="bg-white/80 dark:bg-slate-900/70 backdrop-blur-md shadow-2xl rounded-lg max-w-xl w-full text-center p-5 border border-gray-800 ">
+          {/* ✅ Icon Success */}
+          <div className="flex justify-center mb-4">
+            <Lottie animationData={successAnim} loop={true} className="w-30 h-30" />
+          </div>
 
-              <h5 className="md:text-4xl text-3xl font-bold md:tracking-normal tracking-normal md:leading-normal leading-normal ">{data.title}</h5>
-              {/* Gambar */}
-              <div className="">
-                <img src={data.image} className="rounded-md shadow dark:shadow-gray-700 mt-5" alt={data.title} />
-              </div>
+          {/* 🎉 Pesan Utama */}
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Terima Kasih Atas Donasi Anda!</h1>
+          <p className="text-gray-600 dark:text-gray-300 text-sm max-w-md mx-auto">
+            Donasi Anda telah berhasil dikonfirmasi untuk program <span className="font-semibold text-amber-500">{data.title}</span>. Dukungan Anda sangat berarti bagi kami 🙏
+          </p>
 
-              {/* Informasi Donasi */}
-              <div className="mt-6 mb-8 bg-white/10 dark:bg-slate-900/30  ">
-                {/* Bagian atas */}
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-amber-400 text-xl font-bold">Rp {totalTerkumpul.toLocaleString("id-ID")}</span>
-                  <span className="text-gray-400 text-sm">75 hari lagi</span>
-                </div>
+          {/* 📊 Info progress */}
+          <div className="mt-8 bg-white/60 dark:bg-slate-800/70 rounded-lg p-5 shadow-inner">
+            <img src={data.image} alt={data.title} className="rounded-md mb-4 shadow-lg w-full h-48 object-cover" />
 
-                {/* Progress bar */}
-                <div className="w-full bg-gray-400 dark:bg-gray-400 rounded-full h-2 mt-2">
-                  <div className="bg-amber-400 h-2 rounded-full transition-all duration-500" style={{ width: `60%` }}></div>
-                </div>
-
-                {/* Bagian bawah */}
-                <div className="flex justify-between items-center mt-1">
-                  <span className="text-sm text-gray-500">{percentage}%</span>
-                  <span className="text-sm text-gray-900 dark:text-gray-200 font-semibold">Rp {targetDonasi.toLocaleString("id-ID")}</span>
-                </div>
-
-                <div className="flex gap-2 mt-10">
-                  {/* Tombol Donasi */}
-
-                  <button className="flex items-center justify-center gap-2 bg-amber-400 text-white px-6 py-3 rounded-md w-full hover:bg-amber-400 transition-all duration-300">
-                    <FaRegHeart size={18} />
-                    <Link to={`/donasi-detail/${id}`}>
-                      {" "}
-                      <span className="font-semibold">Donasi Sekarang</span>
-                    </Link>
-                  </button>
-
-                  {/* Tombol Bagikan */}
-                  <button className="flex items-center justify-center gap-2 border border-orange-500 text-orange-500 px-6 py-3 rounded-md hover:bg-orange-50 transition-all duration-300">
-                    <FaShareAlt size={18} />
-                    <span className="font-semibold">Bagikan</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Deskripsi */}
-
-              <div className="mt-4 border border-gray-800 rounded-lg p-5">
-                <div className="text-xl font-semibold">Deskripsi Program</div>
-                <p className="text-slate-400  mt-2">{data.deskripsi}</p>
-              </div>
-
-              <div>
-                <DonasiList />
-              </div>
+            <div className="flex justify-between items-center text-sm mb-1">
+              <span className="text-gray-500 dark:text-gray-300">Terkumpul</span>
+              <span className="font-semibold text-amber-500">Rp {totalTerkumpul.toLocaleString("id-ID")}</span>
             </div>
+
+            <div className="w-full bg-gray-200 dark:bg-gray-600 h-2 rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full transition-all duration-500" style={{ width: `${percentage}%` }}></div>
+            </div>
+
+            <div className="flex justify-between items-center mt-1 text-xs">
+              <span className="text-gray-400">{percentage}%</span>
+              <span className="text-gray-600 dark:text-gray-300 font-semibold">Target: Rp {targetDonasi.toLocaleString("id-ID")}</span>
+            </div>
+          </div>
+
+          {/* ❤️ Tombol Aksi */}
+          <div className="flex flex-col sm:flex-row justify-center gap-3 mt-5">
+            <Link to={`/donasi-detail/${id}`} className="flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-400 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition-all duration-300">
+              <FaHeart />
+              Donasi Lagi
+            </Link>
+
+            <Link to="/" className="flex items-center justify-center gap-2 text-gray-400 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 dark:hover:bg-slate-700 transition-all duration-300 border border-gray-400">
+              <FaHome />
+              Beranda
+            </Link>
+          </div>
+
+          {/* ✨ Pesan Penutup */}
+          <div className="mt-10 text-xs text-gray-500 dark:text-gray-400">
+            Kami akan mengirimkan update terbaru mengenai perkembangan program ini melalui email Anda.
+            <span className="italic">Semoga kebaikan Anda dibalas berlipat ganda 🤍</span>
           </div>
         </div>
       </section>
