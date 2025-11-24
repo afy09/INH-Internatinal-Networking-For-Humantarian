@@ -15,7 +15,7 @@ export default function InhNews() {
   const params = new URLSearchParams(location.search);
   const category = params.get("category");
 
-  const categories = ["Palestina", "Internasional", "Nasional"];
+  const categories = ["Palestina", "International", "Nasional"];
 
   useEffect(() => {
     const fetchData = async () => {

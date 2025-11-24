@@ -106,7 +106,7 @@ export default function AboutUs() {
 
                 <div className="mt-6 mb-6 flex justify-center">
                   <Link to={item?.link} target="_blank">
-                    <button className="text-lg font-semibold border px-6 py-2 rounded-xl text-white hover:bg-amber-400">Donasi Sekarang</button>
+                    <button className="text-lg font-semibold border px-6 py-2 rounded-xl text-white hover:bg-amber-400 hover:text-hitam">Donasi Sekarang</button>
                   </Link>
                   {/* <Link to={`/donasi-detail/${item.id}`}>
                 <button className="text-lg font-semibold border px-6 py-2 rounded-xl text-white hover:bg-amber-400">Donasi Sekarang</button>

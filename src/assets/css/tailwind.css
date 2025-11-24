@@ -3606,6 +3606,11 @@ h6,
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
+.hover\:text-hitam:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgb(60 72 88 / var(--tw-text-opacity)) !important;
+}
+
 .hover\:shadow-md:hover {
   --tw-shadow: 0 5px 13px rgb(60 72 88 / 0.2) !important;
   --tw-shadow-colored: 0 5px 13px var(--tw-shadow-color) !important;

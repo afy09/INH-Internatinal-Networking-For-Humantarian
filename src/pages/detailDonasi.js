@@ -7,14 +7,13 @@ import Switcher from "../components/switcher";
 import LogoInhGold from "../assets/images/Logo-INH-Gold.png";
 
 export default function DonasiDetails() {
-  const { id } = useParams(); // Mendapatkan ID dari parameter URL
+  const { id } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [nominal, setNominal] = useState("");
   const [popupVisible, setPopupVisible] = useState(false);
   const [redirectUrl, setRedirectUrl] = useState("");
 
-  // Daftar nominal yang akan di-mapping
   const nominalOptions = [10000, 30000, 50000, 80000, 100000];
   const [formData, setFormData] = useState({
     name: "",
@@ -25,23 +24,21 @@ export default function DonasiDetails() {
   const isButtonDisabled = formData.name == "";
 
   const handleNominalClick = (e, value) => {
-    e.preventDefault(); // Mencegah default behavior
-    setNominal(value); // Update nilai input saat tombol ditekan
+    e.preventDefault();
+    setNominal(value);
   };
 
   useEffect(() => {
-    // Mengatur tema
     document.documentElement.setAttribute("dir", "ltr");
     document.documentElement.classList.add("dark");
     document.documentElement.classList.remove("light");
 
-    // Fetch data berdasarkan ID
     const fetchData = async () => {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/campaign/${id}`);
         const result = await response.json();
         if (result?.data) {
-          setData(result.data); // Ambil data dari respons
+          setData(result.data);
         }
       } catch (error) {
         console.error("Error fetching blog detail:", error);
@@ -81,7 +78,7 @@ export default function DonasiDetails() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("${process.env.REACT_APP_API_BASE_URL}/api/payment", {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/payment`, {
         name: formData.name,
         email: formData.email,
         amount: parseInt(formData.amount), // Pastikan amount dikirim sebagai angka

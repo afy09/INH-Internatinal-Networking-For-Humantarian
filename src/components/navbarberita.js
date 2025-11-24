@@ -200,28 +200,6 @@ export default function NavbarBerita() {
               </li>
 
               <li className="has-submenu parent-parent-menu-item">
-                <Link to="/newsinh">INH News</Link>
-                <span className="menu-arrow"></span>
-                <ul className="submenu open">
-                  <li>
-                    <Link to="/inhnews?category=Palestina" className="sub-menu-item">
-                      Palestina
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/inhnews?category=Internasional" className="sub-menu-item">
-                      Internasional
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/inhnews?category=Nasional" className="sub-menu-item">
-                      Nasional
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li className="has-submenu parent-parent-menu-item">
                 <Link to="">Distribusi Program</Link>
                 <span className="menu-arrow"></span>
                 <ul className="submenu open">
@@ -238,6 +216,28 @@ export default function NavbarBerita() {
 
                   <li>
                     <Link to="/disprog?category=Nasional" className="sub-menu-item">
+                      Nasional
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li className="has-submenu parent-parent-menu-item">
+                <Link to="/newsinh">INH News</Link>
+                <span className="menu-arrow"></span>
+                <ul className="submenu open">
+                  <li>
+                    <Link to="/inhnews?category=Palestina" className="sub-menu-item">
+                      Palestina
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/inhnews?category=International" className="sub-menu-item">
+                      International
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/inhnews?category=Nasional" className="sub-menu-item">
                       Nasional
                     </Link>
                   </li>
